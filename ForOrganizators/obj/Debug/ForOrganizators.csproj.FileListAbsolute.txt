@@ -1,0 +1,7 @@
+F:\Мои приложения\ForOrganizators\bin\Debug\ForOrganizators.dll.config
+F:\Мои приложения\ForOrganizators\bin\Debug\ForOrganizators.dll
+F:\Мои приложения\ForOrganizators\bin\Debug\ForOrganizators.pdb
+F:\Мои приложения\ForOrganizators\obj\Debug\ForOrganizators.dll
+F:\Мои приложения\ForOrganizators\obj\Debug\ForOrganizators.pdb
+F:\Мои приложения\ForOrganizators\obj\Debug\ForOrganizators.csprojAssemblyReference.cache
+F:\Мои приложения\ForOrganizators\obj\Debug\ForOrganizators.csproj.CoreCompileInputs.cache

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DancersHUSTLEModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dancers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SecondName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SurName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SampoBefore" Type="bit" Nullable="false" />
+    <Property Name="gender" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Samp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDDancer" Type="bigint" Nullable="false" />
+    <Property Name="Sampo" Type="text" Nullable="false" />
+    <Property Name="Designation" Type="text" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="PathMan" Type="text" />
+    <Property Name="PathWoman" Type="text" />
+    <Property Name="Open" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Samp_Dancers">
+    <End Role="Dancers" Type="Self.Dancers" Multiplicity="1" />
+    <End Role="Samp" Type="Self.Samp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Dancers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Samp">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DancersHUSTLEModelContainer">
+    <EntitySet Name="Dancers" EntityType="Self.Dancers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Samp" EntityType="Self.Samp" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Samp_Dancers" Association="Self.FK_Samp_Dancers">
+      <End Role="Dancers" EntitySet="Dancers" />
+      <End Role="Samp" EntitySet="Samp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

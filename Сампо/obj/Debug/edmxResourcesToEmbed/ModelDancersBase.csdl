@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DancersHUSTLEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Dancers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SecondName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SurName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SampoBefore" Type="Boolean" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Samp" Relationship="Self.FK_Samp_Dancers" FromRole="Dancers" ToRole="Samp" />
+  </EntityType>
+  <EntityType Name="Samp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDDancer" Type="Int64" Nullable="false" />
+    <Property Name="Sampo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PathMan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PathWoman" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Open" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Dancers" Relationship="Self.FK_Samp_Dancers" FromRole="Samp" ToRole="Dancers" />
+  </EntityType>
+  <Association Name="FK_Samp_Dancers">
+    <End Role="Dancers" Type="Self.Dancers" Multiplicity="1" />
+    <End Role="Samp" Type="Self.Samp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Dancers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Samp">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DancersHUSTLEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dancers" EntityType="Self.Dancers" />
+    <EntitySet Name="Samp" EntityType="Self.Samp" />
+    <AssociationSet Name="FK_Samp_Dancers" Association="Self.FK_Samp_Dancers">
+      <End Role="Dancers" EntitySet="Dancers" />
+      <End Role="Samp" EntitySet="Samp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

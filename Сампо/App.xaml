@@ -1,0 +1,17 @@
+﻿<Application x:Class="Сампо.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Сампо"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style dictionaries/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/ViewDancersDictionary.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/ViewInformationDictionary.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/ImagesDictionary.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/InputInformationDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

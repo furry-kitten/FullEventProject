@@ -1,0 +1,41 @@
+F:\Мои приложения\Сампо\bin\Debug\Сампо.exe.config
+F:\Мои приложения\Сампо\bin\Debug\Сампо.exe
+F:\Мои приложения\Сампо\bin\Debug\Сампо.pdb
+F:\Мои приложения\Сампо\obj\Debug\Сампо.csprojAssemblyReference.cache
+F:\Мои приложения\Сампо\obj\Debug\App.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Сампо_MarkupCompile.cache
+F:\Мои приложения\Сампо\obj\Debug\Сампо_MarkupCompile.lref
+F:\Мои приложения\Сампо\obj\Debug\Сампо.g.resources
+F:\Мои приложения\Сампо\obj\Debug\Сампо.Properties.Resources.resources
+F:\Мои приложения\Сампо\obj\Debug\Сампо.csproj.GenerateResource.cache
+F:\Мои приложения\Сампо\obj\Debug\Сампо.exe
+F:\Мои приложения\Сампо\obj\Debug\Сампо.pdb
+F:\Мои приложения\Сампо\obj\Debug\App.baml
+F:\Мои приложения\Сампо\bin\Debug\EntityFramework.dll
+F:\Мои приложения\Сампо\bin\Debug\EntityFramework.SqlServer.dll
+F:\Мои приложения\Сампо\bin\Debug\EntityFramework.xml
+F:\Мои приложения\Сампо\bin\Debug\EntityFramework.SqlServer.xml
+F:\Мои приложения\Сампо\obj\Debug\Сампо.csproj.CopyComplete
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\ButtonDictionary.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\ViewDancersDictionary.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\ViewInformationDictionary.baml
+F:\Мои приложения\Сампо\obj\Debug\Views\MainWindow.g.cs
+F:\Мои приложения\Сампо\bin\Debug\System.Data.SqlClient.dll
+F:\Мои приложения\Сампо\bin\Debug\System.Data.SqlClient.xml
+F:\Мои приложения\Сампо\obj\Debug\Views\MainWindow.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\ImagesDictionary.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\InputInformationDictionary.baml
+F:\Мои приложения\Сампо\obj\Debug\Pages\Sampo.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\Sampo.baml
+F:\Мои приложения\Сампо\obj\Debug\Views\AuthanenticationWindow.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Views\AuthanenticationWindow.baml
+F:\Мои приложения\Сампо\obj\Debug\Сампо.csproj.CoreCompileInputs.cache
+F:\Мои приложения\Сампо\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Мои приложения\Сампо\bin\Debug\DevExpress.Mvvm.dll
+F:\Мои приложения\Сампо\bin\Debug\DevExpress.Mvvm.UI.dll
+F:\Мои приложения\Сампо\bin\Debug\JetBrains.Annotations.dll
+F:\Мои приложения\Сампо\bin\Debug\DevExpress.Mvvm.pdb
+F:\Мои приложения\Сампо\bin\Debug\DevExpress.Mvvm.UI.pdb
+F:\Мои приложения\Сампо\bin\Debug\JetBrains.Annotations.xml
+F:\Мои приложения\Сампо\obj\Debug\Pages\MainPage.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\MainPage.baml
