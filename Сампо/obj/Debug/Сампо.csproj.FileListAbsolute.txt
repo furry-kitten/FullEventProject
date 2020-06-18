@@ -25,8 +25,6 @@ F:\Мои приложения\Сампо\bin\Debug\System.Data.SqlClient.xml
 F:\Мои приложения\Сампо\obj\Debug\Views\MainWindow.baml
 F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\ImagesDictionary.baml
 F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\InputInformationDictionary.baml
-F:\Мои приложения\Сампо\obj\Debug\Pages\Sampo.g.cs
-F:\Мои приложения\Сампо\obj\Debug\Pages\Sampo.baml
 F:\Мои приложения\Сампо\obj\Debug\Views\AuthanenticationWindow.g.cs
 F:\Мои приложения\Сампо\obj\Debug\Views\AuthanenticationWindow.baml
 F:\Мои приложения\Сампо\obj\Debug\Сампо.csproj.CoreCompileInputs.cache
@@ -39,3 +37,11 @@ F:\Мои приложения\Сампо\bin\Debug\DevExpress.Mvvm.UI.pdb
 F:\Мои приложения\Сампо\bin\Debug\JetBrains.Annotations.xml
 F:\Мои приложения\Сампо\obj\Debug\Pages\MainPage.g.cs
 F:\Мои приложения\Сампо\obj\Debug\Pages\MainPage.baml
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateSampoPage.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateUserPage.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\SampoPage.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateSampoPage.baml
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateUserPage.baml
+F:\Мои приложения\Сампо\obj\Debug\Pages\SampoPage.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\AuthStyles.baml
+F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\WindowStyles.baml

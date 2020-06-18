@@ -1,9 +1,13 @@
-﻿F:\Мои приложения\Сампо\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 FF:\Мои приложения\Сампо\App.xaml;;
+FF:\Мои приложения\Сампо\Pages\CreateSampoPage.xaml;;
+FF:\Мои приложения\Сампо\Pages\CreateUserPage.xaml;;
 FF:\Мои приложения\Сампо\Pages\MainPage.xaml;;
-FF:\Мои приложения\Сампо\Pages\Sampo.xaml;;
+FF:\Мои приложения\Сампо\Pages\SampoPage.xaml;;
+FF:\Мои приложения\Сампо\Style dictionaries\AuthStyles.xaml;;
 FF:\Мои приложения\Сампо\Style dictionaries\InputInformationDictionary.xaml;;
 FF:\Мои приложения\Сампо\Style dictionaries\ImagesDictionary.xaml;;
+FF:\Мои приложения\Сампо\Style dictionaries\WindowStyles.xaml;;
 FF:\Мои приложения\Сампо\Views\AuthanenticationWindow.xaml;;
 FF:\Мои приложения\Сампо\Views\MainWindow.xaml;;
 

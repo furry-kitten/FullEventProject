@@ -1,42 +1,33 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Reflection;
-using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.ServiceModel;
 using System.Runtime.Serialization;
 
 namespace Сампо.Models
 {
     [DataContract]
-    public class Sampo : INotifyPropertyChanged
+    public class Sampo : BaseVM
     {
         #region Переменные
-        [DataMember]
         private string entitling;
-        [DataMember]
         private int idOrganizator;
-        [DataMember]
         private decimal price;
-        [DataMember]
         private string rulesPath;
-        [DataMember]
         private string location;
-        [DataMember]
         private string currency = "RUB";
-        [DataMember]
         private char shortCurrency = 'р';
 
-        [DataMember]
         private List<Partner> boys = new List<Partner>();
-        [DataMember]
         private List<Partner> ladiese = new List<Partner>();
 
         #endregion
         /**********************************************************/
         #region Конструкторы
-        public Sampo() { }
         /// <summary>
         /// Создает новый экземпляр класса Sampo
         /// </summary>
@@ -92,7 +83,7 @@ namespace Сампо.Models
             set 
             { 
                 entitling = value;
-                OnPropertyChanged("entitling");
+                OnPropertyChanged();
             }
         }
 
@@ -106,7 +97,7 @@ namespace Сампо.Models
             set 
             { 
                 idOrganizator = value;
-                OnPropertyChanged("idOrganizator");
+                OnPropertyChanged();
             }
         }
 
@@ -120,7 +111,7 @@ namespace Сампо.Models
             set
             {
                 price = value;
-                OnPropertyChanged("");
+                OnPropertyChanged();
             }
         }
 
@@ -154,16 +145,9 @@ namespace Сампо.Models
             set { currency = value; }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         #endregion
         /**********************************************************/
         #region Методы класса
-
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
 
         /// <summary>
         /// Добавляет танцора в список сампо
@@ -171,7 +155,7 @@ namespace Сампо.Models
         /// <param name="partner">Экземпляр класса Parther</param>
         public void AddNewPartner(Partner partner)
         {
-            if (partner != null && partner.Gender == 'Ж')
+            if (partner != null && partner.Gender == Gender.Female)
                 ladiese.Add(partner);
             else
                 boys.Add(partner);
@@ -182,10 +166,7 @@ namespace Сампо.Models
         /// </summary>
         /// <param name="gender">Допустимые значения: M/F, m/f (английская раскладка список партёров/партёрш), М/Ж, м/ж (русская раскладка список партёров/партёрш)</param>
         /// <returns></returns>
-        public Array GetPartnerList(char gender) =>
-            gender == 'M' | gender == 'm' | gender == 'М' | gender == 'м' ? boys.ToArray()
-            : gender == 'F' | gender == 'f' | gender == 'Ж' | gender == 'ж' ? ladiese.ToArray()
-            : null;
+        public Array GetPartnerList(Gender gender) => gender == Gender.Male ? boys.ToArray() : ladiese.ToArray();
 
         /// <summary>
         /// Записывает в файл строки представленные в параметре <paramref name="rules"/>.
@@ -197,7 +178,7 @@ namespace Сампо.Models
             if (rules == null)
                 return;
 
-            rulesPath = Assembly.GetExecutingAssembly().Location + string.Format(@"/{entitling}rules.dat");
+            rulesPath = Assembly.GetExecutingAssembly().Location + ($@"/{entitling}rules.dat");
             DateTime LastVersion = Convert.ToDateTime("0");
             bool newRules = false;
 

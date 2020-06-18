@@ -37,9 +37,9 @@
         </Grid.RowDefinitions>
 
         <TextBlock  Grid.Row="0"
+                    Margin="0" Background="#222222"
                     Text="{Binding SelectedSampo.Entitling}"
-                    Style="{StaticResource BaseTextBlock}"
-                    Margin="0" Background="#222222"/>
+                    Style="{StaticResource BaseTextBlock}"/>
         <TextBlock
                     Grid.Row="1" Grid.ColumnSpan="2"
                     Text=""

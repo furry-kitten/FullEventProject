@@ -35,9 +35,9 @@ namespace ForOrganizators
         
         public List<Partner> GetPartners(string firstname, string secondname, string patronymic) => new List<Partner>
         {
-            new Partner("Unknown", "Unknown", 'm'),
-            new Partner("Unknown1", "Unknown1", 'm'),
-            new Partner("Unknown2", "Unknown2", 'm')
+            new Partner("Unknown", "Unknown", Gender.Male),
+            new Partner("Unknown1", "Unknown1", Gender.Male),
+            new Partner("Unknown2", "Unknown2", Gender.Male)
         };
         /*
         {
@@ -47,9 +47,9 @@ namespace ForOrganizators
         */
         public List<Partner> GetPartners(string firstname, string secondname) => new List<Partner>
         {
-            new Partner("Unknown", "Unknown", 'm'),
-            new Partner("Unknown1", "Unknown1", 'm'),
-            new Partner("Unknown2", "Unknown2", 'm')
+            new Partner("Unknown", "Unknown", Gender.Male),
+            new Partner("Unknown1", "Unknown1", Gender.Male),
+            new Partner("Unknown2", "Unknown2", Gender.Male)
         };
         /*
         {

@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Title="Сампо"
     Height="200" Width="280" 
-    MinHeight="200" MinWidth="260" 
+    MinHeight="215" MinWidth="300" 
     Visibility="Visible"
     WindowStyle="None"
     ResizeMode="NoResize"
@@ -22,9 +22,9 @@
             <ColumnDefinition Width="0.5*" MinWidth="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*" MinHeight="20"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="0.5*" MinHeight="20"/>
+            <RowDefinition Height="0.5*" MinHeight="30"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.5*" MinHeight="30"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Column="3">
@@ -37,9 +37,10 @@
                     Style="{StaticResource CloseApp}"
                     Grid.Column="1">
 
-                <Image Source="/img/closeapp.png" Height="20" VerticalAlignment="Top"/>
+                <Image Source="/img/closeapp.png" Height="20"/>
             </Button>
         </Grid>
+        
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     Orientation="Vertical"
@@ -52,6 +53,10 @@
             <TextBlock Text="Пароль" HorizontalAlignment="Left" Style="{StaticResource BaseTextBlock}"/>
             
             <PasswordBox x:Name="Password"/>
+
+            <CheckBox x:Name="Remember"
+                      Content="Входить автоматически"
+                      Style="{StaticResource BaseCheckBox}"/>
             
             <DockPanel Margin="2" LastChildFill="True">
                 <Button x:Name="Registration"
@@ -66,9 +71,10 @@
                 
                 <GridSplitter Opacity="0"
                               ResizeBehavior="BasedOnAlignment"
-                              HorizontalAlignment="Center"
+                              HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"/>
             </DockPanel>
+
         </StackPanel>
     </Grid>
 </Window>

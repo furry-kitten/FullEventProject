@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\Мои приложения\Сампо\App.xaml
-11803201963
+13-599993497
 
-20509486603
-25-423965450
-Pages\CreateSampoPage.xaml;Pages\CreateUserPage.xaml;Pages\MainPage.xaml;Pages\SampoPage.xaml;Style dictionaries\InputInformationDictionary.xaml;Style dictionaries\ButtonDictionary.xaml;Style dictionaries\ImagesDictionary.xaml;Style dictionaries\ViewDancersDictionary.xaml;Style dictionaries\ViewInformationDictionary.xaml;Views\AuthanenticationWindow.xaml;Views\MainWindow.xaml;
+21-351458651
+26823598826
+Pages\CreateSampoPage.xaml;Pages\CreateUserPage.xaml;Pages\MainPage.xaml;Pages\SampoPage.xaml;Style dictionaries\AuthStyles.xaml;Style dictionaries\InputInformationDictionary.xaml;Style dictionaries\ButtonDictionary.xaml;Style dictionaries\ImagesDictionary.xaml;Style dictionaries\ViewDancersDictionary.xaml;Style dictionaries\ViewInformationDictionary.xaml;Style dictionaries\WindowStyles.xaml;Views\AuthanenticationWindow.xaml;Views\MainWindow.xaml;
 
-True
+False
 

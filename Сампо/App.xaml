@@ -11,6 +11,8 @@
                 <ResourceDictionary Source="Style dictionaries/ViewInformationDictionary.xaml"/>
                 <ResourceDictionary Source="Style dictionaries/ImagesDictionary.xaml"/>
                 <ResourceDictionary Source="Style dictionaries/InputInformationDictionary.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/AuthStyles.xaml"/>
+                <ResourceDictionary Source="Style dictionaries/WindowStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

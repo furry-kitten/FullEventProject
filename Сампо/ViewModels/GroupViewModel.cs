@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using Сампо.Models;
+using Сампо.HostingSampo;
 
 namespace Сампо.ViewModels
 {
-    public class GroupViewModel : BaseVM
+    public class GroupViewModel : Models.BaseVM
     {
         /*
          * Создать список танцоров
@@ -18,7 +19,8 @@ namespace Сампо.ViewModels
 
         public GroupViewModel()
         {
-
+            var client = new ForOrganizatorsClient();
+            selectedSampo = client.GetSampoList("")[0];
         }
 
         public Sampo SelectedSampo

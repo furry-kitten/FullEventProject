@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Сампо.Models
 {
-    [Serializable]
-    public class GroupOfOrganiziers
+    public class GroupOfOrganiziers : BaseVM
     {
         public int ID { get; set; }
         public string Name { get; set; }

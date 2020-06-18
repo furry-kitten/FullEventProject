@@ -1,27 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Сампо.Style_dictionaries">
-
-    <Style TargetType="TextBox" x:Key="BaseTextBox">
-        <Style.Setters>
-            <Setter Property="Background" Value="#303a3f"/>
-            <Setter Property="BorderBrush" Value="#202020"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style.Setters>
-
-        <Style.Triggers>
-            
-        </Style.Triggers>
-    </Style>
-
-    <Style TargetType="PasswordBox">
-        <Style.Setters>
-            <Setter Property="Background" Value="#303a3f"/>
-            <Setter Property="BorderBrush" Value="#202020"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style.Setters>
-    </Style>
     
 </ResourceDictionary>

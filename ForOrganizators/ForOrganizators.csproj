@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ForOrganizators.cs" />
     <Compile Include="IForOrganizators.cs" />
+    <Compile Include="Models\BaseVM.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\HomeDBConnection.cs" />
     <Compile Include="Models\Partner.cs" />

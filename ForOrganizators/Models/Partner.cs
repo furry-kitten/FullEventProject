@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Сампо.Models
 {
-    [Serializable]
-    public class Partner : INotifyPropertyChanged
+    [DataContract]
+    public class Partner : BaseVM
     {
         private int id;
         private string name;
         private string surname;
         private int phone = -1;
         private int idsha = -1;
-        private char gender;
-        private bool organizer = false;
+        private Gender gender;
         private List<int> sampoIDs;
 
-        //===========================================================================================
-        public Partner() { }
+//===========================================================================================
 
         /// <summary>
         /// Создаёт экземпляр класса Partner
@@ -28,7 +26,7 @@ namespace Сампо.Models
         /// <param name="name">Имя танцора</param>
         /// <param name="surname">Фамилия танцора</param>
         /// <param name="gender">Пол танцора</param>
-        public Partner(string name, string surname, char gender)
+        public Partner(string name, string surname, Gender gender)
         {
             this.name = name;
             this.surname = surname;
@@ -42,7 +40,7 @@ namespace Сампо.Models
         /// <param name="surname">Фамилия танцора</param>
         /// <param name="gender">Пол танцора</param>
         /// <param name="phone">Контактный телефон танцора</param>
-        public Partner(string name, string surname, char gender, int phone)
+        public Partner(string name, string surname, Gender gender, int phone)
         {
             this.name = name;
             this.surname = surname;
@@ -58,7 +56,7 @@ namespace Сампо.Models
         /// <param name="gender">Пол танцора</param>
         /// <param name="phone">Контактный телефон танцора</param>
         /// <param name="idsha">ID АСХ танцора в таблице танцоров хастла</param>
-        public Partner(string name, string surname, char gender, int phone, int idsha)
+        public Partner(string name, string surname, Gender gender, int phone, int idsha)
         {
             this.name = name;
             this.surname = surname;
@@ -68,6 +66,7 @@ namespace Сампо.Models
         }
 
 //===========================================================================================
+        [DataMember]
         /// <summary>
         /// Задаёт/возвращает id танцора
         /// </summary>
@@ -76,7 +75,8 @@ namespace Сампо.Models
             get => id; 
             set { id = value; }
         }
-            
+
+        [DataMember]
         /// <summary>
         /// Задаёт/возвращает имя танцора
         /// </summary>
@@ -86,6 +86,7 @@ namespace Сампо.Models
             set { name = value; }
         }
 
+        [DataMember]
         /// <summary>
         /// Задаёт/возвращает фамилию
         /// </summary>
@@ -95,6 +96,7 @@ namespace Сампо.Models
             set { surname = value; }
         }
 
+        [DataMember]
         /// <summery>
         /// Задаёт/возвращает телефон танцора
         /// Возвращает -1, если номер не указан
@@ -105,24 +107,17 @@ namespace Сампо.Models
             set { phone = value; }
         }
 
+        [DataMember]
         /// <summary>
         /// Возвращает номер АСХ танцора
         /// Возвращает -1, если номер не указан
         /// </summary>
         public int IDsha => idsha;
 
+        [DataMember]
         /// <summary>
         /// Возвращает пол танцора
         /// </summary>
-        public char Gender => gender;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void BecomeAnOrganizer(int idSampo)
-        {
-            organizer = true;
-
-            sampoIDs.Add(idSampo);
-        }
+        public Gender Gender => gender;
     }
 }
