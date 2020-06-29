@@ -16,6 +16,7 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentControl
+                            DataContext="{TemplateBinding ItemBindingGroup}"
                             Margin="{TemplateBinding Margin}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -25,7 +26,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="ListView" x:Key="BaseLV">
+    <Style TargetType="ListBox" x:Key="BaseLB">
         <Setter Property="Margin" Value="30, 15, 30, 0"/>
         <Setter Property="MinHeight" Value="26"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -35,16 +36,20 @@
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="ListView">
+                <ControlTemplate TargetType="ListBox">
                     <Border
                         CornerRadius="15"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                        <ContentControl
-                            Margin="{TemplateBinding Margin}"
-                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Grid>
+                            <ContentControl
+                                Content="{TemplateBinding DataContext}"
+                                Margin="{TemplateBinding Margin}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter />
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

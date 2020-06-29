@@ -4,17 +4,27 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using ForOrganizators.Models.Перечисления;
 
-namespace Сампо.Models
+namespace ForOrganizators.Models
 {
     [DataContract]
     public class Partner : BaseVM
     {
-        private int id;
-        private string name;
-        private string surname;
-        private int phone = -1;
-        private int idsha = -1;
+        private int 
+            id,
+            classicPoint = 0,
+            jnjPoint = 0;
+        private ClassicClasses classicClasses = ClassicClasses.E;
+        private JnJClasses jnjClasses = JnJClasses.Begginer;
+        private string
+            name,
+            surname;
+
+        private int
+            phone = -1,
+            idsha = -1;
+
         private Gender gender;
         private List<int> sampoIDs;
 
@@ -32,7 +42,7 @@ namespace Сампо.Models
             this.surname = surname;
             this.gender = gender;
         }
-
+        
         /// <summary>
         /// Создаёт экземпляр класса Partner
         /// </summary>
@@ -66,58 +76,53 @@ namespace Сампо.Models
         }
 
 //===========================================================================================
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает id танцора
         /// </summary>
+        [DataMember]
         public int ID 
         { 
             get => id; 
-            set { id = value; }
+            set { id = value; OnPropertyChanged(); }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает имя танцора
         /// </summary>
+        [DataMember]
         public string Name
         {
             get => name;
-            set { name = value; }
+            set { name = value; OnPropertyChanged(); }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает фамилию
         /// </summary>
+        [DataMember]
         public string Surname
         {
             get => surname;
-            set { surname = value; }
+            set { surname = value; OnPropertyChanged(); }
         }
-
-        [DataMember]
         /// <summery>
         /// Задаёт/возвращает телефон танцора
         /// Возвращает -1, если номер не указан
         /// </summery>
+        [DataMember]
         public int Phone
         {
             get => phone;
-            set { phone = value; }
+            set { phone = value; OnPropertyChanged(); }
         }
-
-        [DataMember]
         /// <summary>
         /// Возвращает номер АСХ танцора
         /// Возвращает -1, если номер не указан
         /// </summary>
-        public int IDsha => idsha;
-
         [DataMember]
+        public int IDsha => idsha;
         /// <summary>
         /// Возвращает пол танцора
         /// </summary>
+        [DataMember]
         public Gender Gender => gender;
     }
 }

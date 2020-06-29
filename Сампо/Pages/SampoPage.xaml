@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Сампо.Pages"
+      xmlns:models="clr-namespace:Сампо.Models"
       xmlns:vm="clr-namespace:Сампо.ViewModels"
       Name="Window"
       mc:Ignorable="d" 
@@ -39,10 +40,6 @@
         <TextBlock  Grid.Row="0"
                     Margin="0" Background="#222222"
                     Text="{Binding SelectedSampo.Entitling}"
-                    Style="{StaticResource BaseTextBlock}"/>
-        <TextBlock
-                    Grid.Row="1" Grid.ColumnSpan="2"
-                    Text=""
                     Style="{StaticResource BaseTextBlock}"/>
 
         <!--#region Информация о записанных-->
@@ -90,7 +87,21 @@
                 </DockPanel>
                 -->
 
-                <ListView Style="{StaticResource BaseLV}"/>
+                <ListBox Style="{StaticResource BaseLB}" ItemsSource="{Binding SelectedSampo.Liders}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:Partner}">
+                            <TextBlock>
+                                <Run Text="{Binding Name}"/>
+                                <Run Text="{Binding Surname}"/>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
 
             <GridSplitter
@@ -122,7 +133,21 @@
                 </DockPanel>
                 -->
 
-                <ListView Style="{StaticResource BaseLV}"/>
+                <ListBox Style="{StaticResource BaseLB}" ItemsSource="{Binding SelectedSampo.Followers}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Run Text="{Binding Name}"/>
+                                <Run Text="{Binding Surname}"/>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
         </Grid>
 
@@ -178,7 +203,18 @@
                 </StackPanel>-->
             <TabControl x:Name="footer" TabStripPlacement="Left" Style="{StaticResource BaseTC}">
                 <TabItem x:Name="rules" Style="{StaticResource BaseTabItem}" Header="Правила сампо">
-                    <ListBox x:Name="SampoRules" Style="{StaticResource BaseListBox}"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition MaxHeight="30"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Content="Изменить" Style="{StaticResource BaseBtn}"/>
+
+                        <ListBox x:Name="SampoRules"
+                                 Grid.Row="1"
+                                 Style="{StaticResource BaseListBox}"/>
+                    </Grid>
                 </TabItem>
                 <TabItem x:Name="location" Style="{StaticResource BaseTabItem}" Header="Место проведения">
                     <Label x:Name="SampoLocation"/>

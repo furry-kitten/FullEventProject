@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Сампо.Models
+namespace ForOrganizators.Models.Перечисления
 {
-    public enum Gender
+    enum ClassicClasses
     {
-        Male,
-        Female
+        A,
+        B,
+        C,
+        D,
+        E
     }
 }

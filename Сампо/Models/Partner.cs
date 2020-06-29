@@ -4,15 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SSampo = Сампо.HostingSampo.Sampo;
+using SPartner = Сампо.HostingSampo.Partner;
+using SGender = Сампо.HostingSampo.Gender;
+using Сампо.Models.Перечисления;
+
 namespace Сампо.Models
 {
     public class Partner : BaseVM
     {
-        private int id;
-        private string name;
-        private string surname;
-        private int phone = -1;
-        private int idsha = -1;
+        private int 
+            id,
+            classicPoint = 0,
+            jnjPoint = 0;
+        private ClassicClasses classicClasses = ClassicClasses.E;
+        private JnJClasses jnjClasses = JnJClasses.Begginer;
+        private string
+            name,
+            surname;
+
+        private int
+            phone = -1,
+            idsha = -1;
+
         private Gender gender;
         private List<int> sampoIDs;
 
@@ -70,27 +84,24 @@ namespace Сампо.Models
         public int ID 
         { 
             get => id; 
-            set { id = value; }
+            set { id = value; OnPropertyChanged(); }
         }
-            
         /// <summary>
         /// Задаёт/возвращает имя танцора
         /// </summary>
         public string Name
         {
             get => name;
-            set { name = value; }
+            set { name = value; OnPropertyChanged(); }
         }
-
         /// <summary>
         /// Задаёт/возвращает фамилию
         /// </summary>
         public string Surname
         {
             get => surname;
-            set { surname = value; }
+            set { surname = value; OnPropertyChanged(); }
         }
-
         /// <summery>
         /// Задаёт/возвращает телефон танцора
         /// Возвращает -1, если номер не указан
@@ -98,18 +109,21 @@ namespace Сампо.Models
         public int Phone
         {
             get => phone;
-            set { phone = value; }
+            set { phone = value; OnPropertyChanged(); }
         }
-
         /// <summary>
         /// Возвращает номер АСХ танцора
         /// Возвращает -1, если номер не указан
         /// </summary>
         public int IDsha => idsha;
-
         /// <summary>
         /// Возвращает пол танцора
         /// </summary>
         public Gender Gender => gender;
+        /**********************************************************/
+        #region Перегрузка операторов
+        public static implicit operator Partner(SPartner partner) => ClassesConverter.Convert(partner);
+        public static implicit operator SPartner(Partner partner) => ClassesConverter.Convert(partner);
+        #endregion
     }
 }

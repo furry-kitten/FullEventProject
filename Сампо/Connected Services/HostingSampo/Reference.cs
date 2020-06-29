@@ -15,7 +15,7 @@ namespace Сампо.HostingSampo {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseVM", Namespace="http://schemas.datacontract.org/2004/07/%D0%A1%D0%B0%D0%BC%D0%BF%D0%BE.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseVM", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Сампо.HostingSampo.Sampo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Сампо.HostingSampo.Partner))]
@@ -46,7 +46,7 @@ namespace Сампо.HostingSampo {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sampo", Namespace="http://schemas.datacontract.org/2004/07/%D0%A1%D0%B0%D0%BC%D0%BF%D0%BE.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sampo", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models")]
     [System.SerializableAttribute()]
     public partial class Sampo : Сампо.HostingSampo.BaseVM {
         
@@ -55,6 +55,12 @@ namespace Сампо.HostingSampo {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EntitlingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Сампо.HostingSampo.Partner[] FollowersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Сампо.HostingSampo.Partner[] LidersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LocationField;
@@ -90,6 +96,32 @@ namespace Сампо.HostingSampo {
                 if ((object.ReferenceEquals(this.EntitlingField, value) != true)) {
                     this.EntitlingField = value;
                     this.RaisePropertyChanged("Entitling");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Сампо.HostingSampo.Partner[] Followers {
+            get {
+                return this.FollowersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FollowersField, value) != true)) {
+                    this.FollowersField = value;
+                    this.RaisePropertyChanged("Followers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Сампо.HostingSampo.Partner[] Liders {
+            get {
+                return this.LidersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LidersField, value) != true)) {
+                    this.LidersField = value;
+                    this.RaisePropertyChanged("Liders");
                 }
             }
         }
@@ -149,7 +181,7 @@ namespace Сампо.HostingSampo {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Partner", Namespace="http://schemas.datacontract.org/2004/07/%D0%A1%D0%B0%D0%BC%D0%BF%D0%BE.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Partner", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models")]
     [System.SerializableAttribute()]
     public partial class Partner : Сампо.HostingSampo.BaseVM {
         
@@ -251,7 +283,8 @@ namespace Сампо.HostingSampo {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Gender", Namespace="http://schemas.datacontract.org/2004/07/%D0%A1%D0%B0%D0%BC%D0%BF%D0%BE.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Gender", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80" +
+        "%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F")]
     public enum Gender : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]

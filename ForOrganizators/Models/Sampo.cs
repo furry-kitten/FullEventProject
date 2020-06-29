@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using ForOrganizators.Models.Перечисления;
 using System.Runtime.Serialization;
 
-namespace Сампо.Models
+namespace ForOrganizators.Models
 {
     [DataContract]
     public class Sampo : BaseVM
@@ -73,10 +74,10 @@ namespace Сампо.Models
         #endregion
         /**********************************************************/
         #region Поля класса
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает название сампо
         /// </summary>
+        [DataMember]
         public string Entitling
         {
             get => entitling;
@@ -86,11 +87,10 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает имя организатора
         /// </summary>
+        [DataMember]
         public int Organizator
         {
             get => idOrganizator;
@@ -100,11 +100,10 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает стоимость сампо
         /// </summary>
+        [DataMember]
         public decimal Price
         {
             get => price;
@@ -114,35 +113,44 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает путь к файлу с правилами
         /// </summary>
+        [DataMember]
         public string Rules
         {
             get => rulesPath;
             set { rulesPath = value; }
         }
-
-        [DataMember]
         /// <summary>
         /// Задаёт/возвращает адрес места проведения сампо
         /// </summary>
+        [DataMember]
         public string Location
         {
             get => location;
             set { location = value; }
         }
-
-        [DataMember]
         /// <summary>
         /// Возвращает/задаёт валюту для сампо
         /// </summary>
+        [DataMember]
         public string Currency
         {
             get => currency;
             set { currency = value; }
+        }
+        [DataMember]
+        public List<Partner> Liders
+        {
+            get => boys;
+            set { boys = value; OnPropertyChanged(); }
+        }
+        [DataMember]
+        public List<Partner> Followers
+        {
+            get => ladiese;
+            set { ladiese = value; OnPropertyChanged(); }
         }
 
         #endregion

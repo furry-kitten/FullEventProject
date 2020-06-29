@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Сампо.Models
+namespace ForOrganizators.Models
 {
     [DataContract]
     public class BaseVM : INotifyPropertyChanged

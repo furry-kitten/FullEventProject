@@ -21,12 +21,12 @@
                             BorderThickness="{TemplateBinding BorderThickness}">
 
                         <Grid Margin="5 0 5 0">
-                            <ContentPresenter   Margin="{TemplateBinding Margin}"
+                            <ContentPresenter Margin="{TemplateBinding Margin}"
                                                 Content="{TemplateBinding Content}"
                                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
 
-                            <ContentControl     Content="{TemplateBinding Content}"
+                            <ContentControl Content="{TemplateBinding Content}"
                                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                         </Grid>

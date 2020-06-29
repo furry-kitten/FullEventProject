@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+using SSampo = Сампо.HostingSampo.Sampo;
+using SPartner = Сампо.HostingSampo.Partner;
+using SGender = Сампо.HostingSampo.Gender;
+using Сампо.Models.Перечисления;
+
 namespace Сампо.Models
 {
     public class Sampo : BaseVM
@@ -84,7 +89,6 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
         /// <summary>
         /// Задаёт/возвращает имя организатора
         /// </summary>
@@ -97,7 +101,6 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
         /// <summary>
         /// Задаёт/возвращает стоимость сампо
         /// </summary>
@@ -110,7 +113,6 @@ namespace Сампо.Models
                 OnPropertyChanged();
             }
         }
-
         /// <summary>
         /// Задаёт/возвращает путь к файлу с правилами
         /// </summary>
@@ -119,7 +121,6 @@ namespace Сампо.Models
             get => rulesPath;
             set { rulesPath = value; }
         }
-
         /// <summary>
         /// Задаёт/возвращает адрес места проведения сампо
         /// </summary>
@@ -128,7 +129,6 @@ namespace Сампо.Models
             get => location;
             set { location = value; }
         }
-
         /// <summary>
         /// Возвращает/задаёт валюту для сампо
         /// </summary>
@@ -136,6 +136,16 @@ namespace Сампо.Models
         {
             get => currency;
             set { currency = value; }
+        }
+        public List<Partner> Liders
+        {
+            get => boys;
+            set { boys = value; OnPropertyChanged(); }
+        }
+        public List<Partner> Followers
+        {
+            get => ladiese;
+            set { ladiese = value; OnPropertyChanged(); }
         }
 
         #endregion
@@ -243,6 +253,11 @@ namespace Сампо.Models
 
 
 
+        #endregion
+        /**********************************************************/
+        #region Перегрузка операторов
+        public static implicit operator Sampo(SSampo sampo) => ClassesConverter.Convert(sampo);
+        public static implicit operator SSampo(Sampo sampo) => ClassesConverter.Convert(sampo);
         #endregion
     }
 }

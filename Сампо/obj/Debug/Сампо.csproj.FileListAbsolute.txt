@@ -45,3 +45,5 @@ F:\Мои приложения\Сампо\obj\Debug\Pages\CreateUserPage.baml
 F:\Мои приложения\Сампо\obj\Debug\Pages\SampoPage.baml
 F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\AuthStyles.baml
 F:\Мои приложения\Сампо\obj\Debug\Style dictionaries\WindowStyles.baml
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateRulesPage.g.cs
+F:\Мои приложения\Сампо\obj\Debug\Pages\CreateRulesPage.baml

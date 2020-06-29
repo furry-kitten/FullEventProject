@@ -47,11 +47,13 @@
     <Compile Include="ForOrganizators.cs" />
     <Compile Include="IForOrganizators.cs" />
     <Compile Include="Models\BaseVM.cs" />
-    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\HomeDBConnection.cs" />
     <Compile Include="Models\Partner.cs" />
     <Compile Include="Models\Sampo.cs" />
+    <Compile Include="Models\Перечисления\ClassicClasses.cs" />
+    <Compile Include="Models\Перечисления\Gender.cs" />
+    <Compile Include="Models\Перечисления\JnJClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

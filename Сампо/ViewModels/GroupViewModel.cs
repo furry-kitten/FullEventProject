@@ -6,7 +6,8 @@ using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using Сампо.HostingSampo;
+using Сампо.Models;
+using Сампо.Models.Перечисления;
 
 namespace Сампо.ViewModels
 {
@@ -16,11 +17,25 @@ namespace Сампо.ViewModels
          * Создать список танцоров
          */
         private Sampo selectedSampo;
+        private List<Partner>
+            liders = new List<Partner>
+            {
+                new Partner("Name", "Surname", Gender.Male),
+                new Partner("Name1",  "Surname1",  Gender.Male),
+                new Partner("Name2",  "Surname2",  Gender.Male)
+            },
+            folowers = new List<Partner>
+            {
+                new Partner("FName", "FSurname", Gender.Male),
+                new Partner("FName1",  "FSurname1",  Gender.Male),
+                new Partner("FName2",  "FSurname2",  Gender.Male)
+            };
 
         public GroupViewModel()
         {
-            var client = new ForOrganizatorsClient();
-            selectedSampo = client.GetSampoList("")[0];
+            selectedSampo = new Sampo("Название", 200, 1);
+            selectedSampo.Liders = liders;
+            selectedSampo.Followers = folowers;
         }
 
         public Sampo SelectedSampo

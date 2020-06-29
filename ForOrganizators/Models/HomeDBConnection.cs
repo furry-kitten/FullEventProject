@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Сампо.Models;
 using System.Data.SqlClient;
+using ForOrganizators.Models;
 
-namespace Сампо
+namespace ForOrganizators
 {
     [Serializable]
     static class HomeDBConnection
@@ -17,8 +17,8 @@ namespace Сампо
         {
             using (SqlConnection connection = new SqlConnection(ConnetionString))
             {
-                SqlCommand search = new SqlCommand(string.Format("select * from Dancer where idsha = {partner.IDsha}"));
-                SqlCommand adddencer = new SqlCommand(string.Format("insert into Dancer values ({partner.Name} {partner.Surname} {partner.Phone} {partner.IDsha} {partner.Gender})"));
+                SqlCommand search = new SqlCommand($"select * from Dancer where idsha = {partner.IDsha}");
+                SqlCommand adddencer = new SqlCommand($"insert into Dancer values ({partner.Name} {partner.Surname} {partner.Phone} {partner.IDsha} {partner.Gender})");
 
                 SqlDataReader reader = search.ExecuteReader();
 
