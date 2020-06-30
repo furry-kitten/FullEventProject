@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Linq;
 using System.Text;
@@ -12,6 +11,8 @@ using SSampo = Сампо.HostingSampo.Sampo;
 using SPartner = Сампо.HostingSampo.Partner;
 using SGender = Сампо.HostingSampo.Gender;
 using Сампо.Models.Перечисления;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace Сампо.Models
 {
@@ -83,8 +84,8 @@ namespace Сампо.Models
         public string Entitling
         {
             get => entitling;
-            set 
-            { 
+            set
+            {
                 entitling = value;
                 OnPropertyChanged();
             }
@@ -95,8 +96,8 @@ namespace Сампо.Models
         public int Organizator
         {
             get => idOrganizator;
-            set 
-            { 
+            set
+            {
                 idOrganizator = value;
                 OnPropertyChanged();
             }
@@ -137,15 +138,15 @@ namespace Сампо.Models
             get => currency;
             set { currency = value; }
         }
-        public List<Partner> Liders
+        public ObservableCollection<Partner> Liders
         {
-            get => boys;
-            set { boys = value; OnPropertyChanged(); }
+            get => new ObservableCollection<Partner>(boys);
+            set { boys = value.ToList(); OnPropertyChanged(); }
         }
-        public List<Partner> Followers
+        public ObservableCollection<Partner> Followers
         {
-            get => ladiese;
-            set { ladiese = value; OnPropertyChanged(); }
+            get => new ObservableCollection<Partner>(ladiese);
+            set { ladiese = value.ToList(); OnPropertyChanged(); }
         }
 
         #endregion

@@ -110,6 +110,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSampo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\Authentication.cs" />
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="Models\ClassesConverter.cs" />
     <Compile Include="Models\EnumToItemsSource.cs" />

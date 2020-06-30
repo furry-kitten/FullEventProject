@@ -318,6 +318,12 @@ namespace Сампо.HostingSampo {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IForOrganizators/GetPartners", ReplyAction="http://tempuri.org/IForOrganizators/GetPartnersResponse")]
         System.Threading.Tasks.Task<Сампо.HostingSampo.Partner[]> GetPartnersAsync(string firstname, string secondname, string patronymic);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IForOrganizators/GetAllPartners", ReplyAction="http://tempuri.org/IForOrganizators/GetAllPartnersResponse")]
+        Сампо.HostingSampo.Partner[] GetAllPartners(string firstname, string secondname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IForOrganizators/GetAllPartners", ReplyAction="http://tempuri.org/IForOrganizators/GetAllPartnersResponse")]
+        System.Threading.Tasks.Task<Сампо.HostingSampo.Partner[]> GetAllPartnersAsync(string firstname, string secondname);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IForOrganizators/GetSampoList", ReplyAction="http://tempuri.org/IForOrganizators/GetSampoListResponse")]
         Сампо.HostingSampo.Sampo[] GetSampoList(string city);
         
@@ -480,6 +486,14 @@ namespace Сампо.HostingSampo {
         
         public System.Threading.Tasks.Task<Сампо.HostingSampo.Partner[]> GetPartnersAsync(string firstname, string secondname, string patronymic) {
             return base.Channel.GetPartnersAsync(firstname, secondname, patronymic);
+        }
+        
+        public Сампо.HostingSampo.Partner[] GetAllPartners(string firstname, string secondname) {
+            return base.Channel.GetAllPartners(firstname, secondname);
+        }
+        
+        public System.Threading.Tasks.Task<Сампо.HostingSampo.Partner[]> GetAllPartnersAsync(string firstname, string secondname) {
+            return base.Channel.GetAllPartnersAsync(firstname, secondname);
         }
         
         public Сампо.HostingSampo.Sampo[] GetSampoList(string city) {

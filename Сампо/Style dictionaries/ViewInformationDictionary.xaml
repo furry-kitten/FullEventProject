@@ -58,7 +58,7 @@
                 <Setter Property="Background" Value="#2f2f2f"/>
                 <Setter Property="Foreground" Value="#999999"/>
             </Trigger>
-            
+
             <Trigger Property="IsSelected" Value="true">
                 <Setter Property="Background" Value="#2f2f2f"/>
                 <Setter Property="FontSize" Value="14"/>
@@ -73,7 +73,7 @@
                             <Border Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}">
-                                
+
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="5"/>
@@ -85,7 +85,7 @@
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="5"/>
                                     </Grid.RowDefinitions>
-                                    
+
                                     <ContentPresenter Content="{TemplateBinding Header}"
                                                     Grid.Column="1" Grid.Row="1"
                                                     HorizontalAlignment="Stretch"/>
@@ -95,7 +95,7 @@
                     </Setter.Value>
                 </Setter>
             </Trigger>
-            
+
             <Trigger Property="IsSelected" Value="false">
                 <Setter Property="Background" Value="#353535"/>
                 <Setter Property="FontSize" Value="9"/>
@@ -142,10 +142,10 @@
             <Setter Property="Background" Value="#2f2f2f"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style.Setters>
-        
+
         <Style.Triggers>
-            
+
         </Style.Triggers>
     </Style>
-    
+
 </ResourceDictionary>

@@ -49,6 +49,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllPartners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="secondname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPartnersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" minOccurs="0" name="GetAllPartnersResult" nillable="true" type="q4:ArrayOfPartner" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetSampoList">
     <xs:complexType>
       <xs:sequence>
@@ -59,7 +74,7 @@
   <xs:element name="GetSampoListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" minOccurs="0" name="GetSampoListResult" nillable="true" type="q4:ArrayOfSampo" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" minOccurs="0" name="GetSampoListResult" nillable="true" type="q5:ArrayOfSampo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -73,7 +88,7 @@
   <xs:element name="GetSampoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" minOccurs="0" name="GetSampoResult" nillable="true" type="q5:Sampo" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" minOccurs="0" name="GetSampoResult" nillable="true" type="q6:Sampo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -17,14 +17,14 @@ namespace Сампо.ViewModels
          * Создать список танцоров
          */
         private Sampo selectedSampo;
-        private List<Partner>
-            liders = new List<Partner>
+        private ObservableCollection<Partner>
+            liders = new ObservableCollection<Partner>
             {
                 new Partner("Name", "Surname", Gender.Male),
                 new Partner("Name1",  "Surname1",  Gender.Male),
                 new Partner("Name2",  "Surname2",  Gender.Male)
             },
-            folowers = new List<Partner>
+            folowers = new ObservableCollection<Partner>
             {
                 new Partner("FName", "FSurname", Gender.Male),
                 new Partner("FName1",  "FSurname1",  Gender.Male),

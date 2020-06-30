@@ -55,6 +55,12 @@
   <wsdl:message name="IForOrganizators_GetPartners_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPartnersResponse" />
   </wsdl:message>
+  <wsdl:message name="IForOrganizators_GetAllPartners_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPartners" />
+  </wsdl:message>
+  <wsdl:message name="IForOrganizators_GetAllPartners_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPartnersResponse" />
+  </wsdl:message>
   <wsdl:message name="IForOrganizators_GetSampoList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSampoList" />
   </wsdl:message>
@@ -79,6 +85,10 @@
     <wsdl:operation name="GetPartners">
       <wsdl:input wsaw:Action="http://tempuri.org/IForOrganizators/GetPartners" message="tns:IForOrganizators_GetPartners_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IForOrganizators/GetPartnersResponse" message="tns:IForOrganizators_GetPartners_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPartners">
+      <wsdl:input wsaw:Action="http://tempuri.org/IForOrganizators/GetAllPartners" message="tns:IForOrganizators_GetAllPartners_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IForOrganizators/GetAllPartnersResponse" message="tns:IForOrganizators_GetAllPartners_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSampoList">
       <wsdl:input wsaw:Action="http://tempuri.org/IForOrganizators/GetSampoList" message="tns:IForOrganizators_GetSampoList_InputMessage" />
@@ -112,6 +122,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPartners">
       <soap12:operation soapAction="http://tempuri.org/IForOrganizators/GetPartners" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPartners">
+      <soap12:operation soapAction="http://tempuri.org/IForOrganizators/GetAllPartners" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

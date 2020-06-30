@@ -39,17 +39,15 @@
                 <ControlTemplate TargetType="ListBox">
                     <Border
                         CornerRadius="15"
+                        DataContext="{TemplateBinding DataContext}"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                        <Grid>
-                            <ContentControl
-                                Content="{TemplateBinding DataContext}"
-                                Margin="{TemplateBinding Margin}"
-                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            <ContentPresenter />
-                        </Grid>
+                        <ContentControl
+                            DataContext="{TemplateBinding DataContext}"
+                            Margin="{TemplateBinding Margin}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

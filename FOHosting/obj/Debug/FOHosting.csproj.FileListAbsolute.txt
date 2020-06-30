@@ -9,3 +9,14 @@ F:\Мои приложения\FOHosting\obj\Debug\FOHosting.csproj.CopyComplete
 F:\Мои приложения\FOHosting\obj\Debug\FOHosting.exe
 F:\Мои приложения\FOHosting\obj\Debug\FOHosting.pdb
 F:\Мои приложения\FOHosting\obj\Debug\FOHosting.csproj.CoreCompileInputs.cache
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\FOHosting.exe.config
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\FOHosting.exe
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\FOHosting.pdb
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\ForOrganizators.dll
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\ForOrganizators.pdb
+F:\Мои приложения\Проект Сампо\FOHosting\bin\Debug\ForOrganizators.dll.config
+F:\Мои приложения\Проект Сампо\FOHosting\obj\Debug\FOHosting.csprojAssemblyReference.cache
+F:\Мои приложения\Проект Сампо\FOHosting\obj\Debug\FOHosting.csproj.CoreCompileInputs.cache
+F:\Мои приложения\Проект Сампо\FOHosting\obj\Debug\FOHosting.csproj.CopyComplete
+F:\Мои приложения\Проект Сампо\FOHosting\obj\Debug\FOHosting.exe
+F:\Мои приложения\Проект Сампо\FOHosting\obj\Debug\FOHosting.pdb

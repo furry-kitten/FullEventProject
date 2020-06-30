@@ -45,6 +45,16 @@ namespace ForOrganizators
         List<Partner> GetPartners(string firstname, string secondname, string patronymic);
 
         /// <summary>
+        /// Возвращает список партнёров по совпадению ФИО
+        /// </summary>
+        /// <param name="firstname">Имя</param>
+        /// <param name="secondname">Фамилия</param>
+        /// <param name="patronymic">Отвество</param>
+        /// <returns></returns>
+        [OperationContract]
+        List<Partner> GetAllPartners(string firstname, string secondname);
+
+        /// <summary>
         /// Возвращает список всех сампо
         /// </summary>
         /// <returns>список типа List<Sampo></returns>

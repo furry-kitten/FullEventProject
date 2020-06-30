@@ -13,7 +13,7 @@ namespace Сампо.Models
 {
     public class Partner : BaseVM
     {
-        private int 
+        private int
             id,
             classicPoint = 0,
             jnjPoint = 0;
@@ -30,7 +30,7 @@ namespace Сампо.Models
         private Gender gender;
         private List<int> sampoIDs;
 
-//===========================================================================================
+        //===========================================================================================
 
         /// <summary>
         /// Создаёт экземпляр класса Partner
@@ -77,13 +77,13 @@ namespace Сампо.Models
             this.idsha = idsha;
         }
 
-//===========================================================================================
+        //===========================================================================================
         /// <summary>
         /// Задаёт/возвращает id танцора
         /// </summary>
-        public int ID 
-        { 
-            get => id; 
+        public int ID
+        {
+            get => id;
             set { id = value; OnPropertyChanged(); }
         }
         /// <summary>

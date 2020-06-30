@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Мои приложения\\Сайт\\Сайт.csproj": {}
+    "F:\\Мои приложения\\Проект Сампо\\Сайт\\Сайт.csproj": {}
   },
   "projects": {
-    "F:\\Мои приложения\\Сайт\\Сайт.csproj": {
+    "F:\\Мои приложения\\Проект Сампо\\Сайт\\Сайт.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Мои приложения\\Сайт\\Сайт.csproj",
+        "projectUniqueName": "F:\\Мои приложения\\Проект Сампо\\Сайт\\Сайт.csproj",
         "projectName": "Сайт",
-        "projectPath": "F:\\Мои приложения\\Сайт\\Сайт.csproj",
+        "projectPath": "F:\\Мои приложения\\Проект Сампо\\Сайт\\Сайт.csproj",
         "packagesPath": "C:\\Users\\Володя\\.nuget\\packages\\",
-        "outputPath": "F:\\Мои приложения\\Сайт\\obj\\",
+        "outputPath": "F:\\Мои приложения\\Проект Сампо\\Сайт\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

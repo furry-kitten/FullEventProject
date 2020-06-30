@@ -8,10 +8,11 @@ using SSampo = Сампо.HostingSampo.Sampo;
 using SPartner = Сампо.HostingSampo.Partner;
 using SGender = Сампо.HostingSampo.Gender;
 using Сампо.Models.Перечисления;
+using System.Collections.ObjectModel;
 
 namespace Сампо.Models
 {
-    public static class ClassesConverter
+    internal static class ClassesConverter
     {
 
         public static Gender Convert(SGender gender)
@@ -38,14 +39,23 @@ namespace Сампо.Models
             Liders = Convert(sampo.Liders),
             Followers = Convert(sampo.Followers)
         };
-        public static List<Partner> Convert(SPartner[] partners)
+        public static ObservableCollection<Partner> Convert(SPartner[] partners)
         {
-            List<Partner> partners1 = new List<Partner>();
+            ObservableCollection<Partner> partners1 = new ObservableCollection<Partner>();
 
             foreach (var partner in partners)
                 partners1.Add(Convert(partner));
 
             return partners1;
+        }
+        public static ObservableCollection<Sampo> Convert(SSampo[] sampos)
+        {
+            var list = new ObservableCollection<Sampo>();
+
+            foreach (var sampo in sampos)
+                list.Add(Convert(sampo));
+
+            return list;
         }
         public static SGender Convert(Gender gender)
         {
@@ -79,6 +89,24 @@ namespace Сампо.Models
             Liders = Convert(sampo.Liders),
             Followers = Convert(sampo.Followers)
         };
+        public static SPartner[] Convert(ObservableCollection<Partner> partners)
+        {
+            ObservableCollection<SPartner> partners1 = new ObservableCollection<SPartner>();
+
+            foreach (var partner in partners)
+                partners1.Add(Convert(partner));
+
+            return partners1.ToArray();
+        }
+        public static SSampo[] Convert(ObservableCollection<Sampo> sampos)
+        {
+            ObservableCollection<SSampo> sampos1 = new ObservableCollection<SSampo>();
+
+            foreach (var partner in sampos)
+                sampos1.Add(Convert(partner));
+
+            return sampos1.ToArray();
+        }
         public static SPartner[] Convert(List<Partner> partners)
         {
             List<SPartner> partners1 = new List<SPartner>();
@@ -87,6 +115,15 @@ namespace Сампо.Models
                 partners1.Add(Convert(partner));
 
             return partners1.ToArray();
+        }
+        public static SSampo[] Convert(List<Sampo> sampos)
+        {
+            List<SSampo> sampos1 = new List<SSampo>();
+
+            foreach (var partner in sampos)
+                sampos1.Add(Convert(partner));
+
+            return sampos1.ToArray();
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "za4J2NHV2o1dmjnuZl3CzEvXEkSIDkWoF29Dm8t5VvhgdqI3ZxJDvIm5uc2Eg8kLLg5WLNzg0xKfJWjmOlQE/Q==",
+  "dgSpecHash": "6nieKVXvBLnis26vfYf1z+Gl46Th0KH57ppE1ncnvHf4Fpbrhp8dw+Hp/y0gavNIqYlGIzXH/cFoVgoQ3P3/Hw==",
   "success": true,
-  "projectFilePath": "F:\\Мои приложения\\Сайт\\Сайт.csproj",
+  "projectFilePath": "F:\\Мои приложения\\Проект Сампо\\Сайт\\Сайт.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Володя\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
     "C:\\Users\\Володя\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
