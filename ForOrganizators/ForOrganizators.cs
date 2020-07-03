@@ -22,7 +22,6 @@ namespace ForOrganizators
             if (partner == null) return false;
             else return true;
         }
-
         public bool AuthorizationWithLogin(string login, string password, out Partner partner)
         {
             //  Запрос к базе с использованием библиотеки доступнгой только серверу (с выводом класса Partner)
@@ -33,7 +32,6 @@ namespace ForOrganizators
             if (partner == null) return false;
             else return true;
         }
-        
         public List<Partner> GetPartners(string firstname, string secondname, string patronymic = "") => new List<Partner>
         {
             new Partner("Unknown", "Unknown", Gender.Male),
@@ -58,7 +56,6 @@ namespace ForOrganizators
             //  return SelectPartners(firstname, secondname) 
         }
         */
-
         public Sampo GetSampo(int id) => new Sampo("UnKnown", 0, -1);
         /*
         {
@@ -66,7 +63,6 @@ namespace ForOrganizators
             //  return SelectSampo(id);
         }
         */
-
         public List<Sampo> GetSampoList(string city) => new List<Sampo> {
         new Sampo("UnKnown ", 0, -1),
         new Sampo("UnKnown1", 0, -1),
@@ -89,6 +85,4 @@ namespace ForOrganizators
         }
         */
     }
-
-    
 }

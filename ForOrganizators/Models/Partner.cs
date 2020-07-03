@@ -14,16 +14,14 @@ namespace ForOrganizators.Models
         private int 
             id,
             classicPoint = 0,
-            jnjPoint = 0;
+            jnjPoint = 0,
+            phone = -1,
+            idsha = -1;
         private ClassicClasses classicClasses = ClassicClasses.E;
         private JnJClasses jnjClasses = JnJClasses.Begginer;
         private string
             name,
             surname;
-
-        private int
-            phone = -1,
-            idsha = -1;
 
         private Gender gender;
         private List<int> sampoIDs;

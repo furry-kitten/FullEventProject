@@ -1,0 +1,42 @@
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csprojAssemblyReference.cache
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\MainWindow.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateSampoPage.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateUserPage.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\MainPage.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\SampoPage.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Windows\AuthanenticationWindow.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Windows\MainWindow.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\App.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient_MarkupCompile.cache
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient_MarkupCompile.lref
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateRulesPage.g.cs
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\App.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\MainWindow.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\AuthStyles.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ButtonDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\InputInformationDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ViewDancersDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ViewInformationDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\WindowStyles.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateRulesPage.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateSampoPage.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateUserPage.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\MainPage.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\SampoPage.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Windows\AuthanenticationWindow.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.exe
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.pdb
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\SampoClient.exe.config
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\SampoClient.exe
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\SampoClient.pdb
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\DevExpress.Mvvm.dll
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\DevExpress.Mvvm.UI.dll
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\DevExpress.Mvvm.pdb
+F:\Мои приложения\Проект Сампо\SampoClient\bin\Debug\DevExpress.Mvvm.UI.pdb
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Windows\MainWindow.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.g.resources
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.Properties.Resources.resources
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.GenerateResource.cache
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.CoreCompileInputs.cache
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.CopyComplete

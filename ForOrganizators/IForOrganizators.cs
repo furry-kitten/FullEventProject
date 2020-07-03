@@ -25,7 +25,7 @@ namespace ForOrganizators
         bool AuthorizationWithLogin(string login, string password, out Partner partner);
 
         /// <summary>
-        /// 
+        /// Подтверждает наличие пользователя в базе данных
         /// </summary>
         /// <param name="IDsha">Номер асх</param>
         /// <param name="password">Пароль пользователя</param>
