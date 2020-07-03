@@ -2,16 +2,18 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SampoClient"
-             StartupUri="Views/Windows/MainWindow.xaml">
+             StartupUri="Views/Windows/AuthanenticationWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Style dictionaries/ButtonDictionary.xaml"/>
-                <ResourceDictionary Source="Style dictionaries/ViewDancersDictionary.xaml"/>
-                <ResourceDictionary Source="Style dictionaries/ViewInformationDictionary.xaml"/>
-                <ResourceDictionary Source="Style dictionaries/InputInformationDictionary.xaml"/>
-                <ResourceDictionary Source="Style dictionaries/AuthStyles.xaml"/>
-                <ResourceDictionary Source="Style dictionaries/WindowStyles.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/BaseStyliesDictionary.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/ViewDancersDictionary.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/ViewInformationDictionary.xaml"/>
+                <!--<ResourceDictionary Source="StyleDictionaries/InputInformationDictionary.xaml"/>-->
+                <ResourceDictionary Source="StyleDictionaries/AuthStyles.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/WindowStylesDictionary.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/RulesDictionary.xaml"/>
+                <ResourceDictionary Source="StyleDictionaries/ButtonDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

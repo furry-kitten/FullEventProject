@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:SampoClient.Views.Windows"
         xmlns:vm="clr-namespace:SampoClient.ViewModels"
         mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800">
     <!--
     Добавить кнопку смены пользователя
@@ -33,14 +35,16 @@
                         Width="90">
 
                 <Button Style="{StaticResource WindowStyle}">
-                    <Image Source="/img/Collapse.png"/>
+                    <Image Source="/img/Collapse.png" />
                 </Button>
 
                 <Button Style="{StaticResource WindowStyle}">
                     <Image Source="/img/expand.png"/>
                 </Button>
 
-                <Button x:Name="CloseApp" Style="{StaticResource CloseApp}">
+                <Button x:Name="CloseApp"
+                        Style="{StaticResource CloseApp}"
+                        Command="{Binding CloseApp}">
                     <Image Source="/img/closeapp.png" Height="20" VerticalAlignment="Top"/>
                 </Button>
             </StackPanel>
@@ -50,13 +54,12 @@
                        Text="САМПО" 
                        FontSize="14" FontWeight="Bold" Foreground="Black"
                        VerticalAlignment="Top"
-                       Margin="0, -3, 0, 0"
-                       Style="{StaticResource BaseTextBlock}" />
+                       MouseLeftButtonDown="DragWindow"
+                       Style="{StaticResource Header}" />
 
             <TextBlock VerticalAlignment="Top"
-                       Margin="0, -3, 0, 0"
                        MouseLeftButtonDown="DragWindow"
-                       Style="{StaticResource BaseTextBlock}"/>
+                       Style="{StaticResource Header}"/>
         </DockPanel>
 
         <StackPanel Orientation="Vertical"

@@ -90,10 +90,6 @@
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -103,31 +99,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Style dictionaries\AuthStyles.xaml">
+    <Page Include="StyleDictionaries\AuthStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Style dictionaries\ButtonDictionary.xaml">
+    <Page Include="StyleDictionaries\BaseStyliesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Style dictionaries\InputInformationDictionary.xaml">
+    <Page Include="StyleDictionaries\ButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Style dictionaries\ViewDancersDictionary.xaml">
+    <Page Include="StyleDictionaries\RulesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Style dictionaries\ViewInformationDictionary.xaml">
+    <Page Include="StyleDictionaries\ViewDancersDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Style dictionaries\WindowStyles.xaml">
+    <Page Include="StyleDictionaries\ViewInformationDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleDictionaries\WindowStylesDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,7 +222,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\closeapp.png" />
+    <Resource Include="img\closeapp.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -250,16 +246,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\closeappIsMO.png" />
+    <Resource Include="img\closeappIsMO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\Collapse.png" />
+    <Resource Include="img\Collapse.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\expand.png" />
+    <Resource Include="img\expand.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\plus.png" />
+    <Resource Include="img\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

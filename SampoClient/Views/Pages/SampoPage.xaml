@@ -200,19 +200,22 @@
                     <ListView
                         Style="{StaticResource BaseListView}"/>
                 </StackPanel>-->
-            <TabControl x:Name="footer" TabStripPlacement="Left" Style="{StaticResource BaseTC}">
+            <TabControl x:Name="footer"
+                        TabStripPlacement="Left"
+                        Style="{StaticResource BaseTC}">
                 <TabItem x:Name="rules" Style="{StaticResource BaseTabItem}" Header="Правила сампо">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition MaxHeight="30"/>
+                            <RowDefinition MaxHeight="40"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <Button Content="Изменить" Style="{StaticResource BaseBtn}"/>
+                        <Button Content="Изменить"
+                                Style="{StaticResource BaseBtn}"/>
 
                         <ListBox x:Name="SampoRules"
                                  Grid.Row="1"
-                                 Style="{StaticResource BaseListBox}"/>
+                                 Style="{StaticResource Rules}"/>
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="location" Style="{StaticResource BaseTabItem}" Header="Место проведения">

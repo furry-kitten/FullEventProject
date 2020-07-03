@@ -29,11 +29,6 @@ namespace SampoClient.Views.Windows
             this.DragMove();
         }
 
-        private void CloseApplication(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void GroupButton(object sender, RoutedEventArgs e)
         {
             //  открыть станицу группы

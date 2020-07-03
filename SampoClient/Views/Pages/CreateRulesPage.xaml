@@ -39,7 +39,7 @@
         </Grid>
 
         <ListBox Grid.Row="1"
-                 Style="{StaticResource BaseListBox}"
+                 Style="{StaticResource Rules}"
                  ItemsSource="{Binding Rules}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

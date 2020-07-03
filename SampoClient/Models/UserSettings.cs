@@ -23,7 +23,7 @@ namespace SampoClient.Models
         public UserSettings()
         {
             autoEnter = false;
-            authentication = null;
+            authentication = new Authentication();
             filePath = $@"{currentDirectory}\{fileName}{format}";
         }
         public UserSettings(Authentication authentication, bool auto)
@@ -66,7 +66,7 @@ namespace SampoClient.Models
             if (!Directory.Exists($@"{currentDirectory}"))
                 Directory.CreateDirectory($@"{currentDirectory}");
 
-            if (!File.Exists($@"{currentDirectory}\{fileName}{format}"))
+            if (File.Exists($@"{currentDirectory}\{fileName}{format}"))
                 using (var file = new FileStream($@"{currentDirectory}\{fileName}{format}", FileMode.Open))
                 {
                     SoapFormatter formatter = new SoapFormatter();

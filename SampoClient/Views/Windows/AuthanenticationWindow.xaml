@@ -6,76 +6,126 @@
         xmlns:local="clr-namespace:SampoClient.Views.Windows"
         xmlns:vm="clr-namespace:SampoClient.ViewModels"
         mc:Ignorable="d"
-        Title="AuthanenticationWindow" Height="450" Width="800">
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="AuthanenticationWindow" Height="250" Width="300">
 
     <Window.DataContext>
         <vm:AuthenticationViewModel/>
     </Window.DataContext>
+    
+        <Grid Background="#222222">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" MinWidth="30"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="0.5*" MinWidth="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" MinHeight="30"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="0.5*" MinHeight="30"/>
+            </Grid.RowDefinitions>
 
-    <Grid Background="#222222">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*" MinWidth="30"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="0.5*" MinWidth="30"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*" MinHeight="30"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="0.5*" MinHeight="30"/>
-        </Grid.RowDefinitions>
 
-        <Grid Grid.Column="3">
+
+            <DockPanel LastChildFill="True"  Grid.Column="0" Grid.ColumnSpan="3">
+
+                <!--#region Кнопки для взаимодействия с окном-->
+                <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Right">
+
+                    <!--<Button Style="{StaticResource WindowStyle}">
+                    <Image Source="/img/Collapse.png" />
+                </Button>
+
+                <Button Style="{StaticResource WindowStyle}">
+                    <Image Source="/img/expand.png"/>
+                </Button>-->
+
+                    <Button x:Name="CloseApp"
+                        Style="{StaticResource CloseApp}"
+                        Command="{Binding CloseApp}">
+                        <Image Source="/img/closeapp.png" Height="20" VerticalAlignment="Top"/>
+                    </Button>
+                </StackPanel>
+                <!--#endregion-->
+
+                <TextBlock DockPanel.Dock="Left"
+                       Text="САМПО" 
+                       FontSize="14" FontWeight="Bold" Foreground="Black"
+                       VerticalAlignment="Top"
+                       MouseLeftButtonDown="DragWindow"
+                       Style="{StaticResource Header}" />
+
+                <TextBlock VerticalAlignment="Top"
+                       MouseLeftButtonDown="DragWindow"
+                       Style="{StaticResource Header}"/>
+            </DockPanel>
+
+            <!--<Grid Grid.Column="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Button x:Name="CloseApp"
-                    Style="{StaticResource CloseApp}"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Command="{Binding CloseApp}"
+                    Style="{StaticResource CloseApp}">
 
                 <Image Source="/img/closeapp.png" Height="20"/>
             </Button>
-        </Grid>
+        </Grid>-->
 
-        <StackPanel Grid.Row="1"
+            <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     Orientation="Vertical"
                     VerticalAlignment="Center">
 
-            <TextBlock Text="Логин" HorizontalAlignment="Left" Style="{StaticResource BaseTextBlock}"/>
+                <TextBlock Text="Логин" HorizontalAlignment="Left" Style="{StaticResource BaseTextBlock}"/>
 
-            <TextBox x:Name="Login"
+                <TextBox x:Name="Login"
                      Text="{Binding LoginOrIDsha}"
                      Style="{StaticResource BaseTextBox}"/>
-            <TextBlock Text="Пароль" HorizontalAlignment="Left" Style="{StaticResource BaseTextBlock}"/>
+                <TextBlock Text="Пароль" HorizontalAlignment="Left" Style="{StaticResource BaseTextBlock}"/>
 
-            <PasswordBox x:Name="Password"/>
-            <!--ContextMenu="{Binding Settings.Authentication.Password}"-->
+                <PasswordBox x:Name="Password"/>
+                <!--ContextMenu="{Binding Settings.Authentication.Password}"-->
 
-            <CheckBox x:Name="Remember"
-                      Content="Запомнить меня"
-                      Style="{StaticResource BaseCheckBox}"/>
+                <CheckBox x:Name="Remember"
+                          Content="Запомнить меня"
+                          Style="{StaticResource BaseCheckBox}"/>
 
-            <DockPanel Margin="2" LastChildFill="True">
+                <DockPanel Margin="0" LastChildFill="True">
                 <Button x:Name="Registration"
-                        Content="Зарегистрироваться"
-                        DockPanel.Dock="Left"
-                        Style="{StaticResource AuthorizationBtn}"/>
+                            DockPanel.Dock="Left"
+                            Style="{StaticResource AuthorizationBtn}">
+                    <DockPanel LastChildFill="True">
+                        <GridSplitter Width="5" DockPanel.Dock="Left" Visibility="Hidden"/>
+                        <GridSplitter Width="5" DockPanel.Dock="Right" Visibility="Hidden"/>
+                        <TextBlock Text="Зарегистрироваться"/>
+                    </DockPanel>
+                </Button>
 
-                <Button x:Name="Authorization"
-                        Content="Войти"
-                        DockPanel.Dock="Right"
-                        Command="{Binding SignIn}"
-                        CommandParameter="{Binding ElementName=Password}"
-                        Style="{StaticResource AuthorizationBtn}"/>
+                    <Button x:Name="Authorization"
+                            DockPanel.Dock="Right"
+                            Command="{Binding SignIn}"
+                            CommandParameter="{Binding ElementName=Password}"
+                            Style="{StaticResource AuthorizationBtn}">
+                    <DockPanel LastChildFill="True">
+                        <GridSplitter Width="5" DockPanel.Dock="Left" Visibility="Hidden"/>
+                        <GridSplitter Width="5" DockPanel.Dock="Right" Visibility="Hidden"/>
+                        <TextBlock Text="Войти"/>
+                    </DockPanel>
+                </Button>
 
-                <GridSplitter Opacity="0"
-                              ResizeBehavior="BasedOnAlignment"
-                              HorizontalAlignment="Stretch"
-                              VerticalAlignment="Stretch"/>
-            </DockPanel>
+                    <GridSplitter Opacity="0"
+                                  ResizeBehavior="BasedOnAlignment"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch"/>
+                </DockPanel>
 
-        </StackPanel>
-    </Grid>
+            </StackPanel>
+        </Grid>
 </Window>

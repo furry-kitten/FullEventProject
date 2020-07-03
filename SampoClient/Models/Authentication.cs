@@ -42,7 +42,7 @@ namespace SampoClient.Models
         }
         public string Password
         {
-            get => string.Empty;
+            get => password;
             set { password = value; OnPropertyChanged(); }
         }
         public ForOrganizatorsClient Client => client;

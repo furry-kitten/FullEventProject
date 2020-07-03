@@ -1,5 +1,4 @@
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csprojAssemblyReference.cache
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\MainWindow.g.cs
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateSampoPage.g.cs
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateUserPage.g.cs
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\MainPage.g.cs
@@ -12,13 +11,6 @@ F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Sam
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient_MarkupCompile.lref
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateRulesPage.g.cs
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\App.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\MainWindow.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\AuthStyles.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ButtonDictionary.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\InputInformationDictionary.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ViewDancersDictionary.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\ViewInformationDictionary.baml
-F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Style dictionaries\WindowStyles.baml
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateRulesPage.baml
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateSampoPage.baml
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Views\Pages\CreateUserPage.baml
@@ -40,3 +32,10 @@ F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\Sam
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.GenerateResource.cache
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.CoreCompileInputs.cache
 F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\SampoClient.csproj.CopyComplete
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\AuthStyles.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\ButtonDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\ViewDancersDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\ViewInformationDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\WindowStylesDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\RulesDictionary.baml
+F:\Мои приложения\Проект Сампо\SampoClient\obj\Debug\StyleDictionaries\BaseStyliesDictionary.baml

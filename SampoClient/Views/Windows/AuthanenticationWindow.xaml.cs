@@ -23,5 +23,10 @@ namespace SampoClient.Views.Windows
         {
             InitializeComponent();
         }
+
+        public void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
