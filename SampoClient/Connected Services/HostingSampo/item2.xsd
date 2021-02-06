@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8888/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" />
+  <xs:import schemaLocation="http://localhost:8888/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="Partner">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseVM">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" minOccurs="0" name="Gender" type="q1:Gender" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" minOccurs="0" name="CurrentClassicClass" type="q1:ClassicClasses" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" minOccurs="0" name="CurrentJnJClass" type="q2:JnJClasses" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" minOccurs="0" name="Gender" type="q3:Gender" />
           <xs:element minOccurs="0" name="ID" type="xs:int" />
           <xs:element minOccurs="0" name="IDsha" type="xs:int" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Phone" type="xs:int" />
+          <xs:element minOccurs="0" name="PointsInClassic" type="xs:int" />
+          <xs:element minOccurs="0" name="PointsInJnJ" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SampoSubList" nillable="true" type="q4:ArrayOfint" />
           <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -41,7 +47,7 @@
           <xs:element minOccurs="0" name="Followers" nillable="true" type="tns:ArrayOfPartner" />
           <xs:element minOccurs="0" name="Liders" nillable="true" type="tns:ArrayOfPartner" />
           <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Organizator" type="xs:int" />
+          <xs:element minOccurs="0" name="Organizator" nillable="true" type="tns:Partner" />
           <xs:element minOccurs="0" name="Price" type="xs:decimal" />
           <xs:element minOccurs="0" name="Rules" nillable="true" type="xs:string" />
         </xs:sequence>

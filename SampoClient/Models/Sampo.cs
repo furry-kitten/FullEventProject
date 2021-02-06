@@ -18,16 +18,15 @@ namespace SampoClient.Models
     {
         #region Переменные
         private string entitling;
-        private int idOrganizator;
         private decimal price;
         private string rulesPath;
         private string location;
         private string currency = "RUB";
         private char shortCurrency = 'р';
 
+        private Partner organizator;
         private List<Partner> boys = new List<Partner>();
         private List<Partner> ladiese = new List<Partner>();
-
         #endregion
         /**********************************************************/
         #region Конструкторы
@@ -37,11 +36,11 @@ namespace SampoClient.Models
         /// <param name="name">Название сампо</param>
         /// <param name="price">Стоимость сампо</param>
         /// <param name="organizator">Организатор сампо</param>
-        public Sampo(string name, decimal price, int organizator)
+        public Sampo(string name, decimal price, Partner organizator)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
         }
         /// <summary>
         /// Создает новый экземпляр класса Sampo
@@ -50,11 +49,11 @@ namespace SampoClient.Models
         /// <param name="price">Стоимость сампо</param>
         /// <param name="organizator">Организатор сампо</param>
         /// <param name="rules">Пусть к файлу с правилами сампо</param>
-        public Sampo(string name, decimal price, int organizator, string rules)
+        public Sampo(string name, decimal price, Partner organizator, string rules)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
             this.rulesPath = rules;
         }
         /// <summary>
@@ -65,11 +64,11 @@ namespace SampoClient.Models
         /// <param name="organizator">Организатор сампо</param>
         /// <param name="rules">Пусть к файлу с правилами сампо</param>
         /// <param name="location">Адрес проведение сампо</param>
-        public Sampo(string name, decimal price, int organizator, string rules, string location)
+        public Sampo(string name, decimal price, Partner organizator, string rules, string location)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
             this.rulesPath = rules;
             this.location = location;
         }
@@ -89,14 +88,14 @@ namespace SampoClient.Models
             }
         }
         /// <summary>
-        /// Задаёт/возвращает имя организатора
+        /// Задаёт/возвращает организатора
         /// </summary>
-        public int Organizator
+        public Partner Organizator
         {
-            get => idOrganizator;
+            get => organizator;
             set
             {
-                idOrganizator = value;
+                organizator = value;
                 OnPropertyChanged();
             }
         }
@@ -146,11 +145,9 @@ namespace SampoClient.Models
             get => new ObservableCollection<Partner>(ladiese);
             set { ladiese = value.ToList(); OnPropertyChanged(); }
         }
-
         #endregion
         /**********************************************************/
         #region Методы класса
-
         /// <summary>
         /// Добавляет танцора в список сампо
         /// </summary>
@@ -162,14 +159,13 @@ namespace SampoClient.Models
             else
                 boys.Add(partner);
         }
-
         /// <summary>
         /// Возвращает список танцоров в зависимости от пола
         /// </summary>
-        /// <param name="gender">Допустимые значения: M/F, m/f (английская раскладка список партёров/партёрш), М/Ж, м/ж (русская раскладка список партёров/партёрш)</param>
+        /// <param name="gender"></param>
         /// <returns></returns>
         public Array GetPartnerList(Gender gender) => gender == Gender.Male ? boys.ToArray() : ladiese.ToArray();
-
+        [Obsolete("Убедиться, что выполняется сериализация на компьютер и отправляется описание правил на сервер!")]
         /// <summary>
         /// Записывает в файл строки представленные в параметре <paramref name="rules"/>.
         /// </summary>
@@ -209,7 +205,6 @@ namespace SampoClient.Models
                 }
             }
         }
-
         /// <summary>
         /// Записывает строки правил из файла в <paramref name="rules"/>.
         /// </summary>
@@ -227,7 +222,6 @@ namespace SampoClient.Models
                     rules.Add(rulesfile.ReadString());
             }
         }
-
         /// <summary>
         /// Записывает строки правил из файла в <paramref name="rules"/>.
         /// </summary>
@@ -249,9 +243,6 @@ namespace SampoClient.Models
                     rules.Add(rulesfile.ReadString());
             }
         }
-
-
-
         #endregion
         /**********************************************************/
         #region Перегрузка операторов

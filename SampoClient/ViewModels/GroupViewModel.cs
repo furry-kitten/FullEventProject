@@ -31,7 +31,7 @@ namespace SampoClient.ViewModels
 
         public GroupViewModel()
         {
-            selectedSampo = new Sampo("Название", 200, 1);
+            selectedSampo = new Sampo("Название", 200, new Partner("FName2", "FSurname2", Gender.Male));
             selectedSampo.Liders = liders;
             selectedSampo.Followers = folowers;
         }

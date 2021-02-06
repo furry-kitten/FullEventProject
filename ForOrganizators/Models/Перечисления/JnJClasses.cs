@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForOrganizators.Models.Перечисления
 {
-    enum JnJClasses
+    public enum JnJClasses
     {
         Сhampion,
         Star,

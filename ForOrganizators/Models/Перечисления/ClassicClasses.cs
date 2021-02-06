@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForOrganizators.Models.Перечисления
 {
-    enum ClassicClasses
+    public enum ClassicClasses
     {
         A,
         B,

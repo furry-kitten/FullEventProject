@@ -13,12 +13,12 @@ namespace SampoClient.Models
 {
     public class Partner : BaseVM
     {
+        #region Переменные
         private int
             id,
             classicPoint = 0,
             jnjPoint = 0;
-        private ClassicClasses classicClasses = ClassicClasses.E;
-        private JnJClasses jnjClasses = JnJClasses.Begginer;
+
         private string
             name,
             surname;
@@ -27,11 +27,13 @@ namespace SampoClient.Models
             phone = -1,
             idsha = -1;
 
+        private ClassicClasses currentClassicClass = ClassicClasses.E;
+        private JnJClasses currentJnJClass = JnJClasses.Begginer;
         private Gender gender;
-        private List<int> sampoIDs;
-
+        private List<int> sampoSubList;
+        #endregion
         //===========================================================================================
-
+        #region Конструкторы
         /// <summary>
         /// Создаёт экземпляр класса Partner
         /// </summary>
@@ -44,7 +46,6 @@ namespace SampoClient.Models
             this.surname = surname;
             this.gender = gender;
         }
-
         /// <summary>
         /// Создаёт экземпляр класса Partner
         /// </summary>
@@ -59,7 +60,6 @@ namespace SampoClient.Models
             this.gender = gender;
             this.phone = phone;
         }
-
         /// <summary>
         /// Создаёт экземпляр класса Partner
         /// </summary>
@@ -76,8 +76,9 @@ namespace SampoClient.Models
             this.phone = phone;
             this.idsha = idsha;
         }
-
+        #endregion
         //===========================================================================================
+        #region Поля класса
         /// <summary>
         /// Задаёт/возвращает id танцора
         /// </summary>
@@ -85,6 +86,36 @@ namespace SampoClient.Models
         {
             get => id;
             set { id = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Возвращает номер АСХ танцора
+        /// Возвращает -1, если номер не указан
+        /// </summary>
+        public int IDsha => idsha;
+        /// <summery>
+        /// Задаёт/возвращает телефон танцора
+        /// Возвращает -1, если номер не указан
+        /// </summery>
+        public int Phone
+        {
+            get => phone;
+            set { phone = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Возвращает текущие баллы в текущем классе
+        /// </summary>
+        public int PointsInClassic
+        {
+            get => classicPoint;
+            set { classicPoint = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Возвращает текущие баллы в текущем классе
+        /// </summary>
+        public int PointsInJnJ
+        {
+            get => jnjPoint;
+            set { jnjPoint = value; OnPropertyChanged(); }
         }
         /// <summary>
         /// Задаёт/возвращает имя танцора
@@ -102,24 +133,35 @@ namespace SampoClient.Models
             get => surname;
             set { surname = value; OnPropertyChanged(); }
         }
-        /// <summery>
-        /// Задаёт/возвращает телефон танцора
-        /// Возвращает -1, если номер не указан
-        /// </summery>
-        public int Phone
-        {
-            get => phone;
-            set { phone = value; OnPropertyChanged(); }
-        }
-        /// <summary>
-        /// Возвращает номер АСХ танцора
-        /// Возвращает -1, если номер не указан
-        /// </summary>
-        public int IDsha => idsha;
         /// <summary>
         /// Возвращает пол танцора
         /// </summary>
         public Gender Gender => gender;
+        /// <summary>
+        /// Задаёт/возвращает текущий класс танцора в классике
+        /// </summary>
+        public ClassicClasses CurrentClassicClass
+        {
+            get => currentClassicClass;
+            set { currentClassicClass = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Задаёт/возвращает текущий класс танцора в днд
+        /// </summary>
+        public JnJClasses CurrentJnJClass
+        {
+            get => currentJnJClass;
+            set { currentJnJClass = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Задаёт/возвращает список сампо, но которые подписан танцор
+        /// </summary>
+        public List<int> SampoSubList
+        {
+            get => sampoSubList;
+            set { sampoSubList = value; OnPropertyChanged(); }
+        }
+        #endregion
         /**********************************************************/
         #region Перегрузка операторов
         public static implicit operator Partner(SPartner partner) => ClassesConverter.Convert(partner);

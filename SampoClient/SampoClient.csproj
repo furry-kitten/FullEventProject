@@ -200,6 +200,9 @@
     <None Include="Connected Services\HostingSampo\item3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\HostingSampo\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\HostingSampo\SampoClient.HostingSampo.AuthorizationWithIDshaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

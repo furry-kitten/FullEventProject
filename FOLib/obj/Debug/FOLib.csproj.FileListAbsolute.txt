@@ -1,0 +1,6 @@
+P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.csprojAssemblyReference.cache
+P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.csproj.CoreCompileInputs.cache
+P:\Мои приложения\Проект Сампо\FOLib\bin\Debug\FOLib.dll
+P:\Мои приложения\Проект Сампо\FOLib\bin\Debug\FOLib.pdb
+P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.dll
+P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.pdb

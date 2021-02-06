@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ClassicClasses">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A" />
+      <xs:enumeration value="B" />
+      <xs:enumeration value="C" />
+      <xs:enumeration value="D" />
+      <xs:enumeration value="E" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ClassicClasses" nillable="true" type="tns:ClassicClasses" />
+  <xs:simpleType name="JnJClasses">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Сhampion" />
+      <xs:enumeration value="Star" />
+      <xs:enumeration value="Main" />
+      <xs:enumeration value="RisingStar" />
+      <xs:enumeration value="Begginer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="JnJClasses" nillable="true" type="tns:JnJClasses" />
   <xs:simpleType name="Gender">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Male" />

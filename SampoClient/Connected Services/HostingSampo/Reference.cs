@@ -66,7 +66,7 @@ namespace SampoClient.HostingSampo {
         private string LocationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrganizatorField;
+        private SampoClient.HostingSampo.Partner OrganizatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal PriceField;
@@ -140,12 +140,12 @@ namespace SampoClient.HostingSampo {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Organizator {
+        public SampoClient.HostingSampo.Partner Organizator {
             get {
                 return this.OrganizatorField;
             }
             set {
-                if ((this.OrganizatorField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.OrganizatorField, value) != true)) {
                     this.OrganizatorField = value;
                     this.RaisePropertyChanged("Organizator");
                 }
@@ -186,6 +186,12 @@ namespace SampoClient.HostingSampo {
     public partial class Partner : SampoClient.HostingSampo.BaseVM {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SampoClient.HostingSampo.ClassicClasses CurrentClassicClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SampoClient.HostingSampo.JnJClasses CurrentJnJClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SampoClient.HostingSampo.Gender GenderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -201,7 +207,42 @@ namespace SampoClient.HostingSampo {
         private int PhoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PointsInClassicField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PointsInJnJField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int[] SampoSubListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SurnameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SampoClient.HostingSampo.ClassicClasses CurrentClassicClass {
+            get {
+                return this.CurrentClassicClassField;
+            }
+            set {
+                if ((this.CurrentClassicClassField.Equals(value) != true)) {
+                    this.CurrentClassicClassField = value;
+                    this.RaisePropertyChanged("CurrentClassicClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SampoClient.HostingSampo.JnJClasses CurrentJnJClass {
+            get {
+                return this.CurrentJnJClassField;
+            }
+            set {
+                if ((this.CurrentJnJClassField.Equals(value) != true)) {
+                    this.CurrentJnJClassField = value;
+                    this.RaisePropertyChanged("CurrentJnJClass");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SampoClient.HostingSampo.Gender Gender {
@@ -269,6 +310,45 @@ namespace SampoClient.HostingSampo {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PointsInClassic {
+            get {
+                return this.PointsInClassicField;
+            }
+            set {
+                if ((this.PointsInClassicField.Equals(value) != true)) {
+                    this.PointsInClassicField = value;
+                    this.RaisePropertyChanged("PointsInClassic");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PointsInJnJ {
+            get {
+                return this.PointsInJnJField;
+            }
+            set {
+                if ((this.PointsInJnJField.Equals(value) != true)) {
+                    this.PointsInJnJField = value;
+                    this.RaisePropertyChanged("PointsInJnJ");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int[] SampoSubList {
+            get {
+                return this.SampoSubListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampoSubListField, value) != true)) {
+                    this.SampoSubListField = value;
+                    this.RaisePropertyChanged("SampoSubList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Surname {
             get {
                 return this.SurnameField;
@@ -280,6 +360,48 @@ namespace SampoClient.HostingSampo {
                 }
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClassicClasses", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80" +
+        "%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F")]
+    public enum ClassicClasses : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        A = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        B = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        C = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        D = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        E = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JnJClasses", Namespace="http://schemas.datacontract.org/2004/07/ForOrganizators.Models.%D0%9F%D0%B5%D1%80" +
+        "%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F")]
+    public enum JnJClasses : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Сhampion = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Star = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Main = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RisingStar = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Begginer = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]

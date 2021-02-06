@@ -16,13 +16,13 @@ namespace ForOrganizators.Models
     {
         #region Переменные
         private string entitling;
-        private int idOrganizator;
         private decimal price;
         private string rulesPath;
         private string location;
         private string currency = "RUB";
         private char shortCurrency = 'р';
 
+        private Partner organizator;
         private List<Partner> boys = new List<Partner>();
         private List<Partner> ladiese = new List<Partner>();
 
@@ -35,11 +35,11 @@ namespace ForOrganizators.Models
         /// <param name="name">Название сампо</param>
         /// <param name="price">Стоимость сампо</param>
         /// <param name="organizator">Организатор сампо</param>
-        public Sampo(string name, decimal price, int organizator)
+        public Sampo(string name, decimal price, Partner organizator)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
         }
         /// <summary>
         /// Создает новый экземпляр класса Sampo
@@ -48,11 +48,11 @@ namespace ForOrganizators.Models
         /// <param name="price">Стоимость сампо</param>
         /// <param name="organizator">Организатор сампо</param>
         /// <param name="rules">Пусть к файлу с правилами сампо</param>
-        public Sampo(string name, decimal price, int organizator, string rules)
+        public Sampo(string name, decimal price, Partner organizator, string rules)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
             this.rulesPath = rules;
         }
         /// <summary>
@@ -63,11 +63,11 @@ namespace ForOrganizators.Models
         /// <param name="organizator">Организатор сампо</param>
         /// <param name="rules">Пусть к файлу с правилами сампо</param>
         /// <param name="location">Адрес проведение сампо</param>
-        public Sampo(string name, decimal price, int organizator, string rules, string location)
+        public Sampo(string name, decimal price, Partner organizator, string rules, string location)
         {
             this.entitling = name;
             this.price = price;
-            this.idOrganizator = organizator;
+            this.organizator = organizator;
             this.rulesPath = rules;
             this.location = location;
         }
@@ -87,16 +87,16 @@ namespace ForOrganizators.Models
                 OnPropertyChanged();
             }
         }
-        /// <summary>
-        /// Задаёт/возвращает имя организатора
-        /// </summary>
         [DataMember]
-        public int Organizator
+        /// <summary>
+        /// Задаёт/возвращает организатора
+        /// </summary>
+        public Partner Organizator
         {
-            get => idOrganizator;
-            set 
-            { 
-                idOrganizator = value;
+            get => organizator;
+            set
+            {
+                organizator = value;
                 OnPropertyChanged();
             }
         }

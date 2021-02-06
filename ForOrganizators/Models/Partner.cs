@@ -17,14 +17,14 @@ namespace ForOrganizators.Models
             jnjPoint = 0,
             phone = -1,
             idsha = -1;
-        private ClassicClasses classicClasses = ClassicClasses.E;
-        private JnJClasses jnjClasses = JnJClasses.Begginer;
+        private ClassicClasses currentClassicClass = ClassicClasses.E;
+        private JnJClasses currentJnJClass = JnJClasses.Begginer;
         private string
             name,
             surname;
 
         private Gender gender;
-        private List<int> sampoIDs;
+        private List<int> sampoSubList;
 
 //===========================================================================================
 
@@ -118,9 +118,54 @@ namespace ForOrganizators.Models
         [DataMember]
         public int IDsha => idsha;
         /// <summary>
+        /// Возвращает текущие баллы в текущем классе
+        /// </summary>
+        [DataMember]
+        public int PointsInClassic
+        {
+            get => classicPoint;
+            set { classicPoint = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Возвращает текущие баллы в текущем классе
+        /// </summary>
+        [DataMember]
+        public int PointsInJnJ
+        {
+            get => jnjPoint;
+            set { jnjPoint = value; OnPropertyChanged(); }
+        }
+        /// <summary>
         /// Возвращает пол танцора
         /// </summary>
         [DataMember]
         public Gender Gender => gender;
+        /// <summary>
+        /// Задаёт/возвращает текущий класс танцора в классике
+        /// </summary>
+        [DataMember]
+        public ClassicClasses CurrentClassicClass
+        {
+            get => currentClassicClass;
+            set { currentClassicClass = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Задаёт/возвращает текущий класс танцора в днд
+        /// </summary>
+        [DataMember]
+        public JnJClasses CurrentJnJClass
+        {
+            get => currentJnJClass;
+            set { currentJnJClass = value; OnPropertyChanged(); }
+        }
+        /// <summary>
+        /// Задаёт/возвращает список сампо, но которые подписан танцор
+        /// </summary>
+        [DataMember]
+        public List<int> SampoSubList
+        {
+            get => sampoSubList;
+            set { sampoSubList = value; OnPropertyChanged(); }
+        }
     }
 }

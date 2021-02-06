@@ -56,7 +56,7 @@ namespace ForOrganizators
             //  return SelectPartners(firstname, secondname) 
         }
         */
-        public Sampo GetSampo(int id) => new Sampo("UnKnown", 0, -1);
+        public Sampo GetSampo(int id) => new Sampo("UnKnown", 0, new Partner("Unknown", "Unknown", Gender.Male));
         /*
         {
             //  Запрос к базе с использованием библиотеки доступнгой только серверу (с выводом класса Sampo)
@@ -64,16 +64,16 @@ namespace ForOrganizators
         }
         */
         public List<Sampo> GetSampoList(string city) => new List<Sampo> {
-        new Sampo("UnKnown ", 0, -1),
-        new Sampo("UnKnown1", 0, -1),
-        new Sampo("UnKnown2", 0, -1),
-        new Sampo("UnKnown3", 0, -1),
-        new Sampo("UnKnown4", 0, -1),
-        new Sampo("UnKnown5", 0, -1),
-        new Sampo("UnKnown6", 0, -1),
-        new Sampo("UnKnown7", 0, -1),
-        new Sampo("UnKnown8", 0, -1),
-        new Sampo("UnKnown9", 0, -1)
+        new Sampo("UnKnown ", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown1", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown2", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown3", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown4", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown5", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown6", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown7", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown8", 0, new Partner("Unknown", "Unknown", Gender.Male)),
+        new Sampo("UnKnown9", 0, new Partner("Unknown", "Unknown", Gender.Male))
         };
         /*
         {

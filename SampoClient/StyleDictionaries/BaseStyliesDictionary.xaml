@@ -42,12 +42,12 @@
         </Style.Setters>
     </Style>
     <Style TargetType="ListBox" x:Key="BaseLB">
-        <Setter Property="Margin" Value="30, 15, 30, 0"/>
+        <Setter Property="Margin" Value="30, 0, 30, 0"/>
         <Setter Property="MinHeight" Value="26"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="#222222"/>
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="#999999"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -58,7 +58,9 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentControl
+                            ContentTemplate="{TemplateBinding ItemTemplate}"
                             DataContext="{TemplateBinding DataContext}"
+                            Foreground="{TemplateBinding Foreground}"
                             Margin="{TemplateBinding Margin}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>

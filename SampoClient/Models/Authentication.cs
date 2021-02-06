@@ -23,7 +23,7 @@ namespace SampoClient.Models
 
         public Authentication()
         {
-            client = new ForOrganizatorsClient();
+            client = new ForOrganizatorsClient("NetTcpBinding_IForOrganizators");
         }
         public Authentication(ForOrganizatorsClient client)
         {

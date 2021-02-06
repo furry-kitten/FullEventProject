@@ -132,7 +132,8 @@
                 </DockPanel>
                 -->
 
-                <ListBox Style="{StaticResource BaseLB}" ItemsSource="{Binding SelectedSampo.Followers}">
+                <ListBox Style="{StaticResource BaseLB}"
+                         ItemsSource="{Binding SelectedSampo.Followers}">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Vertical"/>
@@ -140,7 +141,7 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock>
+                            <TextBlock Style="{StaticResource BaseTextBlock}" Margin="0">
                                 <Run Text="{Binding Name}"/>
                                 <Run Text="{Binding Surname}"/>
                             </TextBlock>
