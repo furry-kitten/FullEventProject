@@ -1,4 +1,7 @@
 ﻿using DevExpress.Mvvm;
+
+using FO.Models;
+
 using SampoClient.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +23,7 @@ namespace SampoClient.ViewModels
             settings = UserSettings.DeserializeSettings();
         }
 
-        public ICommand<object> SignIn => new DelegateCommand<object>((obj) => Auth(obj));
+        //public ICommand<object> SignIn => new DelegateCommand<object>((obj) => Auth(obj));
         public ICommand CloseApp => new DelegateCommand(() =>
         {
             App.Current.Shutdown();
@@ -31,6 +34,7 @@ namespace SampoClient.ViewModels
             get => settings;
             set { settings = value; OnPropertyChanged(); }
         }
+        /*
         public object LoginOrIDsha
         {
             get => settings.Authentication.IDsha > 0 ? Convert.ToString(settings.Authentication.IDsha) : settings.Authentication.Login;
@@ -42,7 +46,7 @@ namespace SampoClient.ViewModels
                     settings.Authentication.IDsha = var;
                 else
                     settings.Authentication.Login = value as string;
-                /*
+                /*//*
                 try
                 {
                     settings.Authentication.IDsha = int.Parse(value);
@@ -52,7 +56,7 @@ namespace SampoClient.ViewModels
                     settings.Authentication.Login = value;
                 }
                 */
-
+        /*
                 OnPropertyChanged("Settings");
             }
         }
@@ -86,5 +90,6 @@ namespace SampoClient.ViewModels
                 settings.Authentication.Authenticate(settings.Authentication.Login, settings.Authentication.Password);
 #endif
         }
+        */
     }
 }

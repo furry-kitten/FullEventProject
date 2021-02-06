@@ -1,4 +1,7 @@
 ﻿using DevExpress.Mvvm;
+
+using FO.Models;
+
 using SampoClient.Models;
 using SampoClient.Views.Pages;
 

@@ -94,11 +94,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Connected Services\HostingSampo\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Page Include="StyleDictionaries\AuthStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,18 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Authentication.cs" />
-    <Compile Include="Models\BaseVM.cs" />
-    <Compile Include="Models\ClassesConverter.cs" />
     <Compile Include="Models\EnumToItemsSource.cs" />
-    <Compile Include="Models\GroupOfOrganiziers.cs" />
-    <Compile Include="Models\Partner.cs" />
-    <Compile Include="Models\Rule.cs" />
-    <Compile Include="Models\Sampo.cs" />
-    <Compile Include="Models\UserSettings.cs" />
-    <Compile Include="Models\Перечисления\ClassicClasses.cs" />
-    <Compile Include="Models\Перечисления\ControlsForTracking.cs" />
-    <Compile Include="Models\Перечисления\Gender.cs" />
-    <Compile Include="Models\Перечисления\JnJClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -187,34 +171,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\HostingSampo\ForOrganizators.wsdl" />
-    <None Include="Connected Services\HostingSampo\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HostingSampo\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HostingSampo\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HostingSampo\item3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HostingSampo\item4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\HostingSampo\SampoClient.HostingSampo.AuthorizationWithIDshaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\HostingSampo\SampoClient.HostingSampo.AuthorizationWithLoginResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\HostingSampo\SampoClient.HostingSampo.Partner.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\HostingSampo\SampoClient.HostingSampo.Sampo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,24 +187,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\HostingSampo\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\HostingSampo\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\HostingSampo\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\HostingSampo\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\HostingSampo\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\closeappIsMO.png" />
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FOLib\FOLib.csproj">
+      <Project>{72df74f4-a814-4587-bd45-7581940c8d44}</Project>
+      <Name>FOLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

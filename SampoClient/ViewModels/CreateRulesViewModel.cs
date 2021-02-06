@@ -1,4 +1,6 @@
-﻿using SampoClient.Models;
+﻿using FO.Models;
+
+using SampoClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

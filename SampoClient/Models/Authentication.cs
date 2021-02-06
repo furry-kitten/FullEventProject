@@ -1,14 +1,12 @@
-﻿using SampoClient.HostingSampo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using SPartner = SampoClient.HostingSampo.Partner;
-using SGender = SampoClient.HostingSampo.Gender;
 using DevExpress.Mvvm.Native;
+using FO.Models;
 
 namespace SampoClient.Models
 {
@@ -18,9 +16,10 @@ namespace SampoClient.Models
         string
             login,
             password;
-        private ForOrganizatorsClient client;
-        private SPartner partner;
+        //private ForOrganizatorsClient client;
+        private Dancer dancer;
 
+        /*
         public Authentication()
         {
             client = new ForOrganizatorsClient("NetTcpBinding_IForOrganizators");
@@ -29,6 +28,7 @@ namespace SampoClient.Models
         {
             this.client = client;
         }
+        */
 
         public int IDsha
         {
@@ -45,24 +45,18 @@ namespace SampoClient.Models
             get => password;
             set { password = value; OnPropertyChanged(); }
         }
-        public ForOrganizatorsClient Client => client;
-        public Partner Partner => partner;
+        //public ForOrganizatorsClient Client => client;
+        public Dancer Dancer => dancer;
 
+        /*
         public bool Authenticate()
-            => client.AuthorizationWithIDsha(partner.IDsha, password, out partner);
+            => client.AuthorizationWithIDsha(Dancer.IDsha, password, out Dancer);
         public bool Authenticate(int IDsha, string password)
-            => client.AuthorizationWithIDsha(IDsha, password, out partner);
+            => client.AuthorizationWithIDsha(IDsha, password, out Dancer);
         public bool Authenticate(string login, string password)
-            => client.AuthorizationWithLogin(login, password, out partner);
+            => client.AuthorizationWithLogin(login, password, out Dancer);
         public Sampo GetSampo(int id)
             => client.GetSampo(id);
-        public List<Sampo> GetSampoList(string city)
-            => ClassesConverter.Convert(client.GetSampoList(city)).ToList();
-        public ObservableCollection<Sampo> GetSampoColletion(string city)
-            => ClassesConverter.Convert(client.GetSampoList(city)).ToObservableCollection();
-        public ObservableCollection<Partner> GetPartners(string firstname, string secondname)
-            => ClassesConverter.Convert(client.GetAllPartners(firstname, secondname));
-        public ObservableCollection<Partner> GetPartners(string firstname, string secondname, string patronymic)
-            => ClassesConverter.Convert(client.GetPartners(firstname, secondname, patronymic));
+        */
     }
 }

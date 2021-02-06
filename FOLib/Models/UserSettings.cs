@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FO.Models
 {
-    internal class UserSettings : BaseVM
+    public class UserSettings : BaseVM
     {
         private static readonly string
             currentDirectory = $@"{Environment.CurrentDirectory}",

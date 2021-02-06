@@ -1,5 +1,7 @@
-﻿using SampoClient.Models;
-using SampoClient.Models.Перечисления;
+﻿using FO.Models;
+using FO.Models.Перечисления;
+
+using SampoClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,39 +11,39 @@ using System.Threading.Tasks;
 
 namespace SampoClient.ViewModels
 {
-    public class GroupViewModel : Models.BaseVM
+    public class GroupViewModel : BaseVM
     {
         /*
          * Создать список танцоров
          */
-        private Sampo selectedSampo;
-        private ObservableCollection<Partner>
-            liders = new ObservableCollection<Partner>
+        private Event selectedEvent;
+        private List<Dancer>
+            liders = new List<Dancer>
             {
-                new Partner("Name", "Surname", Gender.Male),
-                new Partner("Name1",  "Surname1",  Gender.Male),
-                new Partner("Name2",  "Surname2",  Gender.Male)
+                new Dancer("Name", "Surname", Gender.Male),
+                new Dancer("Name1",  "Surname1",  Gender.Male),
+                new Dancer("Name2",  "Surname2",  Gender.Male)
             },
-            folowers = new ObservableCollection<Partner>
+            folowers = new List<Dancer>
             {
-                new Partner("FName", "FSurname", Gender.Male),
-                new Partner("FName1",  "FSurname1",  Gender.Male),
-                new Partner("FName2",  "FSurname2",  Gender.Male)
+                new Dancer("FName", "FSurname", Gender.Male),
+                new Dancer("FName1",  "FSurname1",  Gender.Male),
+                new Dancer("FName2",  "FSurname2",  Gender.Male)
             };
 
         public GroupViewModel()
         {
-            selectedSampo = new Sampo("Название", 200, new Partner("FName2", "FSurname2", Gender.Male));
-            selectedSampo.Liders = liders;
-            selectedSampo.Followers = folowers;
+            selectedEvent = new Event("Название", 200, new Dancer("FName2", "FSurname2", Gender.Male));
+            selectedEvent.Liders = liders;
+            selectedEvent.Followers = folowers;
         }
 
-        public Sampo SelectedSampo
+        public Event SelectedSampo
         {
-            get => selectedSampo;
+            get => selectedEvent;
             set
             {
-                selectedSampo = value;
+                selectedEvent = value;
                 OnPropertyChanged();
             }
         }
