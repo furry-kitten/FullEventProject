@@ -48,12 +48,16 @@
     <Compile Include="Models\Direction.cs" />
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Rules\Accepted.cs" />
+    <Compile Include="Models\Rules\BaseRule.cs" />
+    <Compile Include="Models\Rules\TimerRule.cs" />
+    <Compile Include="Models\Rules\СongruenceRule.cs" />
     <Compile Include="Models\SHAClasses.cs" />
     <Compile Include="Models\Перечисления\ClassicClasses.cs" />
     <Compile Include="Models\Перечисления\ControlsForTracking.cs" />
     <Compile Include="Models\Перечисления\Gender.cs" />
     <Compile Include="Models\Перечисления\JnJClasses.cs" />
-    <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\Dancer.cs" />
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\Sampo.cs" />
     <Compile Include="Models\UserSettings.cs" />

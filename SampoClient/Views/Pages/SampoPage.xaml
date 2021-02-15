@@ -39,7 +39,7 @@
 
         <TextBlock  Grid.Row="0"
                     Margin="0" Background="#222222"
-                    Text="{Binding SelectedSampo.Entitling}"
+                    Text="{Binding SelectedEvent.Entitling}"
                     Style="{StaticResource BaseTextBlock}"/>
 
         <!--#region Информация о записанных-->

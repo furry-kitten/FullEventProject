@@ -38,7 +38,7 @@ namespace SampoClient.ViewModels
             selectedEvent.Followers = folowers;
         }
 
-        public Event SelectedSampo
+        public Event SelectedEvent
         {
             get => selectedEvent;
             set
