@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FO.Models.Rules
 {
-    internal class BaseRule : BaseVM
+    public class BaseRule : BaseVM
     {
         private string decription = string.Empty;
         private string name = string.Empty;
@@ -36,6 +36,13 @@ namespace FO.Models.Rules
             {
                 decription = value; OnPropertyChanged();
             }
+        }
+
+        public enum RuleType
+        {
+            All,
+            Timer,
+            Сongruence
         }
     }
 }

@@ -6,37 +6,55 @@ using System.Threading.Tasks;
 
 namespace FO.Models.Rules
 {
-    internal class TimerRule : BaseRule
+    public class TimerRule : Accepted<DateTime>
     {
-        private DateTime eventDate = DateTime.Now;
-        private DateTime criticalEventDate = DateTime.Now;
-
         public TimerRule() : base() { }
         public TimerRule(string name, string decription) : base(name, decription) { }
-        public TimerRule(string name, string decription, DateTime eventDate, DateTime criticalEventDate) : base(name, decription)
+        public TimerRule(string name, string decription, DateTime criticalEventDate, TimerRuleType type) : base(name, decription)
         {
-            SetDateTime(eventDate, criticalEventDate);
+            SetDateTime(criticalEventDate, type);
         }
-        public TimerRule(BaseRule baseRule, DateTime eventDate, DateTime criticalEventDate) : base(baseRule.Name, baseRule.Decription)
+        public TimerRule(BaseRule baseRule, DateTime criticalEventDate, TimerRuleType type) : base(baseRule.Name, baseRule.Decription)
         {
-            SetDateTime(eventDate, criticalEventDate);
+            SetDateTime(criticalEventDate, type);
         }
 
-        public DateTime EventDate
-        {
-            get => eventDate;
-            set { eventDate = value; OnPropertyChanged(); }
-        }
         public DateTime CriticalEventDate
         {
-            get => criticalEventDate;
-            set { criticalEventDate = value; OnPropertyChanged(); }
+            get => MainParametr;
+            set { MainParametr = value; OnPropertyChanged(); }
         }
+        public override bool Accept(DateTime item) => predicate(item);
+        public void SetRuleType(TimerRuleType type) => SetType(type);
 
-        private void SetDateTime(DateTime eventDate, DateTime criticalEventDate)
+        private void SetDateTime(DateTime criticalEventDate, TimerRuleType type)
         {
-            this.eventDate = eventDate;
-            this.criticalEventDate = criticalEventDate;
+            this.MainParametr = criticalEventDate;
+            SetType(type);
+        }
+        private void SetType(TimerRuleType type)
+        {
+            switch (type)
+            {
+                case TimerRuleType.CanSubscribe:
+                    predicate -= MustBePaid;
+                    predicate += CanSubscribe;
+                    break;
+                case TimerRuleType.MustBePaid:
+                    predicate -= CanSubscribe;
+                    predicate += MustBePaid;
+                    break;
+            }
+        }
+        private bool MustBePaid(DateTime dateTime) => dateTime > MainParametr;
+        private bool CanSubscribe(DateTime dateTime) => dateTime < MainParametr;
+
+        private Predicate<DateTime> predicate;
+
+        public enum TimerRuleType
+        {
+            MustBePaid,
+            CanSubscribe
         }
     }
 }

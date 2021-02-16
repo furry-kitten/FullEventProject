@@ -12,6 +12,11 @@ namespace FO.Models
         private SHAClasses shaClasses;
         private byte points;
 
+        public Classes()
+        {
+            //Name = $"{shaClasses.Name}{points}";
+        }
+
         public Dancer Dancer
         {
             get => dancer;
@@ -27,5 +32,6 @@ namespace FO.Models
             get => points;
             set { points = value; OnPropertyChanged(); }
         }
+        public override string ToString() => Name;
     }
 }

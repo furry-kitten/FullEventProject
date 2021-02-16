@@ -12,6 +12,13 @@ namespace FO.Models
         private string name = string.Empty;
         private string comment = string.Empty;
 
+        public DBClass() { }
+        public DBClass(string name, string comment)
+        {
+            this.name = name;
+            this.comment = comment;
+        }
+
         public Guid Id
         {
             get => id;

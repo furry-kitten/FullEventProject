@@ -11,18 +11,15 @@ namespace FO.Models
     public class Dancer : DBClass
     {
         #region Переменные
-        private int
-            classicPoint = 0,
-            jnjPoint = 0;
-
         private string
-            surname;
+            surname,
+            patronym;
 
         private int
             phone = -1,
             idsha = -1;
 
-        private List<Classes> classes = new List<Classes>();
+        //private List<Classes> classes = new List<Classes>();
         private Gender gender;
         private List<Event> eventSubList;
         #endregion
@@ -88,22 +85,6 @@ namespace FO.Models
             set { phone = value; OnPropertyChanged(); }
         }
         /// <summary>
-        /// Возвращает текущие баллы в текущем классе
-        /// </summary>
-        public int PointsInClassic
-        {
-            get => classicPoint;
-            set { classicPoint = value; OnPropertyChanged(); }
-        }
-        /// <summary>
-        /// Возвращает текущие баллы в текущем классе
-        /// </summary>
-        public int PointsInJnJ
-        {
-            get => jnjPoint;
-            set { jnjPoint = value; OnPropertyChanged(); }
-        }
-        /// <summary>
         /// Задаёт/возвращает фамилию
         /// </summary>
         public string Surname
@@ -112,17 +93,27 @@ namespace FO.Models
             set { surname = value; OnPropertyChanged(); }
         }
         /// <summary>
+        /// Задаёт/возвращает Отчество
+        /// </summary>
+        public string Patronym
+        {
+            get => patronym;
+            set { patronym = value; OnPropertyChanged(); }
+        }
+        /// <summary>
         /// Возвращает пол танцора
         /// </summary>
         public Gender Gender => gender;
         /// <summary>
         /// Задаёт/возвращает текущий класс танцора в классике
         /// </summary>
+        /*
         public List<Classes> Currentclasses
         {
             get => classes;
             set { classes = value; OnPropertyChanged(); }
         }
+        */
         /// <summary>
         /// Задаёт/возвращает список сампо, нa которые подписан танцор
         /// </summary>
@@ -136,5 +127,39 @@ namespace FO.Models
         #region Перегрузка операторов
 
         #endregion
+
+        public override bool Equals(object obj)
+        {
+            Dancer dancer;
+            try
+            {
+                dancer = obj as Dancer;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message, e.InnerException);
+            }
+
+            return dancer.IDsha == this.idsha;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            var stringGender = gender == Gender.Female ? "Женский" : "Мужской";
+
+            return
+                $"Номер АСХ:\t{idsha}\n" +
+                $"ФИО:\t\t{Name} {surname} {patronym}\n" +
+                $"Пол:\t\t{stringGender}\n" +/*
+                $"Рейтинг\t\tАСХ\n" +
+                $"JnJ:\t\t{}{}\n" +
+                $"Классика:\t\t{}{}\n" +*/
+                $"Телефон:\t{phone}\n";
+        }
     }
 }

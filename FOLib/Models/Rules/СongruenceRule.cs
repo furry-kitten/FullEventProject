@@ -6,38 +6,39 @@ using System.Threading.Tasks;
 
 namespace FO.Models.Rules
 {
-    internal class СongruenceRule : Accepted<SHAClasses>
+    public class СongruenceRule : Accepted<Classes>
     {
-        private SHAClasses classes;
-
+        public СongruenceRule() : base()
+        {
+        }
         public СongruenceRule(string name, string decription) : base(name, decription)
         {
         }
-        public СongruenceRule(string name, string decription, SHAClasses classes) : base(name, decription)
+        public СongruenceRule(string name, string decription, Classes classes) : base(name, decription)
         {
             SetClass(classes);
         }
-        public СongruenceRule(BaseRule baseRule, SHAClasses classes) : base(baseRule.Name, baseRule.Decription)
+        public СongruenceRule(BaseRule baseRule, Classes classes) : base(baseRule.Name, baseRule.Decription)
         {
             SetClass(classes);
         }
 
-        public SHAClasses Class
+        public Classes Class
         {
-            get => classes;
-            set { classes = value; OnPropertyChanged(); }
+            get => MainParametr;
+            set { MainParametr = value; OnPropertyChanged(); }
         }
 
-        public static СongruenceRule CreateСongruenceRule(string name, string decription, SHAClasses classes, byte minPoints)
+        internal static СongruenceRule CreateСongruenceRule(string name, string decription, Classes classes, byte minPoints)
         {
             var rule = new СongruenceRule(name, decription);
 
-            rule.Class = new SHAClasses()
+            rule.Class = new Classes()
             {
                 Name = classes.Name,
-                Direction = classes.Direction,
                 Comment = classes.Comment,
-                TotalPoints = minPoints
+                Points = minPoints,
+                SHAClasses = classes.SHAClasses
             };
 
             return rule;
@@ -45,17 +46,17 @@ namespace FO.Models.Rules
 
         public override string ToString()
         {
-            return $"Можно участвовать, если ваш класс не ниже {classes.Name}{classes.TotalPoints}";
+            return $"Можно участвовать, если ваш класс не ниже {MainParametr.Name}{MainParametr.Points}";
         }
-        public override bool Accept(SHAClasses item)
+        public override bool Accept(Classes item)
         {
-            return item.Name == classes.Name &&
-                item.TotalPoints >= classes.TotalPoints;
+            return item.Name == MainParametr.Name &&
+                item.Points >= MainParametr.Points;
         }
 
-        private void SetClass(SHAClasses classes)
+        private void SetClass(Classes classes)
         {
-            this.classes = classes;
+            MainParametr = classes;
         }
     }
 }

@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72DF74F4-A814-4587-BD45-7581940C8D44}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FO</RootNamespace>
-    <AssemblyName>FOLib</AssemblyName>
+    <ProjectGuid>{01E9706F-3CC3-407A-9045-BC9166CC400B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LibTest</RootNamespace>
+    <AssemblyName>LibTest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,29 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BaseVM.cs" />
-    <Compile Include="Models\Classes.cs" />
-    <Compile Include="Models\DBClass.cs" />
-    <Compile Include="Models\Direction.cs" />
-    <Compile Include="Models\GroupOfOrganiziers.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Rules\Accepted.cs" />
-    <Compile Include="Models\Rules\BaseRule.cs" />
-    <Compile Include="Models\Rules\TimerRule.cs" />
-    <Compile Include="Models\Rules\СongruenceRule.cs" />
-    <Compile Include="Models\SHAClasses.cs" />
-    <Compile Include="Models\Перечисления\ClassicClasses.cs" />
-    <Compile Include="Models\Перечисления\ControlsForTracking.cs" />
-    <Compile Include="Models\Перечисления\Gender.cs" />
-    <Compile Include="Models\Перечисления\JnJClasses.cs" />
-    <Compile Include="Models\Dancer.cs" />
-    <Compile Include="Models\Rule.cs" />
-    <Compile Include="Models\Sampo.cs" />
-    <Compile Include="Models\UserSettings.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Errors\" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FOLib\FOLib.csproj">
+      <Project>{72df74f4-a814-4587-bd45-7581940c8d44}</Project>
+      <Name>FOLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
