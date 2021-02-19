@@ -1,0 +1,2 @@
+P:\Мои приложения\Проект Сампо\FODBLib\obj\Debug\FODBLib.csprojAssemblyReference.cache
+P:\Мои приложения\Проект Сампо\FODBLib\obj\Debug\FODBLib.csproj.CoreCompileInputs.cache

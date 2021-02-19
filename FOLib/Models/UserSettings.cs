@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FO.Properties;
+
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Soap;
@@ -16,15 +19,19 @@ namespace FO.Models
             format = ".stg";
 
         private string filePath = string.Empty;
-
         private bool autoEnter = false;
         //private Authentication authentication;
+
+        private Settings settings = new Settings();
 
         public UserSettings()
         {
             autoEnter = false;
             //authentication = new Authentication();
             filePath = $@"{currentDirectory}\{fileName}{format}";
+            settings.FilePath = filePath;
+
+            settings.Save();
         }
         /*
         public UserSettings(Authentication authentication, bool auto)
@@ -49,19 +56,6 @@ namespace FO.Models
         public static string FileName => fileName;
         public static string CurrentDirectory => currentDirectory;
 
-        public void SaveChanges()
-        {
-            if (!Directory.Exists($@"{currentDirectory}"))
-                Directory.CreateDirectory($@"{currentDirectory}");
-
-            using (var file = new FileStream(filePath, FileMode.OpenOrCreate))
-            {
-                SoapFormatter formatter = new SoapFormatter();
-                formatter.Serialize(file, this);
-
-                File.SetAttributes(file.Name, FileAttributes.Hidden);
-            }
-        }
         public static UserSettings DeserializeSettings()
         {
             var settings = new UserSettings();
@@ -77,6 +71,48 @@ namespace FO.Models
                 }
 
             return settings;
+        }
+
+        public void SaveChanges()
+        {
+            if (!Directory.Exists($@"{currentDirectory}"))
+                Directory.CreateDirectory($@"{currentDirectory}");
+
+            using (var file = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                SoapFormatter formatter = new SoapFormatter();
+                formatter.Serialize(file, this);
+
+                File.SetAttributes(file.Name, FileAttributes.Hidden);
+            }
+        }
+        public string GetConnectionString(Type? type = Type.Debug)
+        {
+            switch (type)
+            {
+                case Type.Debug:
+                    return settings.HomeConnectionString;
+                case Type.Release:
+                    return settings.ConnectionString;
+                default:
+                    return string.Empty;
+            }
+        }
+        public string FilePath
+        {
+            get => settings.FilePath;
+            set
+            {
+                settings.FilePath = value;
+                settings.Save();
+                OnPropertyChanged();
+            }
+        }
+
+        public enum Type
+        {
+            Debug,
+            Release
         }
     }
 }

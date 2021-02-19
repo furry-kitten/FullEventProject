@@ -1,0 +1,13 @@
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.csprojAssemblyReference.cache
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.AssemblyInfoInputs.cache
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.AssemblyInfo.cs
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.csproj.CoreCompileInputs.cache
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\DBLib.deps.json
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\DBLib.dll
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\DBLib.pdb
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\FOLib.dll
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\FOLib.pdb
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.csproj.CopyComplete
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.dll
+P:\Мои приложения\Проект Сампо\DBLib\obj\Debug\netstandard2.1\DBLib.pdb
+P:\Мои приложения\Проект Сампо\DBLib\bin\Debug\netstandard2.1\FOLib.dll.config

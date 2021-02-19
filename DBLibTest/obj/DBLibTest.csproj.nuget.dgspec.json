@@ -1,0 +1,164 @@
+{
+  "format": 1,
+  "restore": {
+    "P:\\Мои приложения\\Проект Сампо\\DBLibTest\\DBLibTest.csproj": {}
+  },
+  "projects": {
+    "P:\\Мои приложения\\Проект Сампо\\DBLibTest\\DBLibTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\Мои приложения\\Проект Сампо\\DBLibTest\\DBLibTest.csproj",
+        "projectName": "DBLibTest",
+        "projectPath": "P:\\Мои приложения\\Проект Сампо\\DBLibTest\\DBLibTest.csproj",
+        "packagesPath": "C:\\Users\\tokar\\.nuget\\packages\\",
+        "outputPath": "P:\\Мои приложения\\Проект Сампо\\DBLibTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "W:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tokar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "P:\\Мои приложения\\Проект Сампо\\DBLib\\DBLib.csproj": {
+                "projectPath": "P:\\Мои приложения\\Проект Сампо\\DBLib\\DBLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "P:\\Мои приложения\\Проект Сампо\\DBLib\\DBLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\Мои приложения\\Проект Сампо\\DBLib\\DBLib.csproj",
+        "projectName": "DBLib",
+        "projectPath": "P:\\Мои приложения\\Проект Сампо\\DBLib\\DBLib.csproj",
+        "packagesPath": "C:\\Users\\tokar\\.nuget\\packages\\",
+        "outputPath": "P:\\Мои приложения\\Проект Сампо\\DBLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "W:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tokar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "P:\\Мои приложения\\Проект Сампо\\FOLib\\FOLib.csproj": {
+                "projectPath": "P:\\Мои приложения\\Проект Сампо\\FOLib\\FOLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "P:\\Мои приложения\\Проект Сампо\\FOLib\\FOLib.csproj": {
+      "restore": {
+        "projectUniqueName": "P:\\Мои приложения\\Проект Сампо\\FOLib\\FOLib.csproj",
+        "projectName": "FOLib",
+        "projectPath": "P:\\Мои приложения\\Проект Сампо\\FOLib\\FOLib.csproj"
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}

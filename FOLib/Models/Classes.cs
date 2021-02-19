@@ -16,6 +16,12 @@ namespace FO.Models
         {
             //Name = $"{shaClasses.Name}{points}";
         }
+        public Classes(Dancer dancer, SHAClasses classes, byte points = 0)
+        {
+            this.dancer = dancer;
+            this.SHAClasses = classes;
+            this.points = points;
+        }
 
         public Dancer Dancer
         {
@@ -32,6 +38,7 @@ namespace FO.Models
             get => points;
             set { points = value; OnPropertyChanged(); }
         }
-        public override string ToString() => Name;
+        public override string ToString() =>
+            $"{Name}{points}";
     }
 }

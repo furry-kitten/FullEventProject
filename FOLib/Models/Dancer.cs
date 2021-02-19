@@ -1,70 +1,34 @@
-﻿using System;
+﻿using FO.Models.Перечисления;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using FO.Models.Перечисления;
 
 namespace FO.Models
 {
     public class Dancer : DBClass
     {
         #region Переменные
-        private string
-            surname,
-            patronym;
-
         private int
-            phone = -1,
             idsha = -1;
 
-        //private List<Classes> classes = new List<Classes>();
-        private Gender gender;
+        private List<Classes> classes = new List<Classes>();
+        private Person person;
         private List<Event> eventSubList;
         #endregion
         //===========================================================================================
         #region Конструкторы
+        public Dancer() { }
         /// <summary>
         /// Создаёт экземпляр класса Dancer
         /// </summary>
-        /// <param name="name">Имя танцора</param>
-        /// <param name="surname">Фамилия танцора</param>
-        /// <param name="gender">Пол танцора</param>
-        public Dancer(string name, string surname, Gender gender)
-        {
-            Name = name;
-            this.surname = surname;
-            this.gender = gender;
-        }
-        /// <summary>
-        /// Создаёт экземпляр класса Dancer
-        /// </summary>
-        /// <param name="name">Имя танцора</param>
-        /// <param name="surname">Фамилия танцора</param>
-        /// <param name="gender">Пол танцора</param>
-        /// <param name="phone">Контактный телефон танцора</param>
-        public Dancer(string name, string surname, Gender gender, int phone)
-        {
-            this.Name = name;
-            this.surname = surname;
-            this.gender = gender;
-            this.phone = phone;
-        }
-        /// <summary>
-        /// Создаёт экземпляр класса Dancer
-        /// </summary>
-        /// <param name="name">Имя танцора</param>
-        /// <param name="surname">Фамилия танцора</param>
-        /// <param name="gender">Пол танцора</param>
-        /// <param name="phone">Контактный телефон танцора</param>
+        /// <param name="person">Информация о личночти</param>
         /// <param name="idsha">ID АСХ танцора в таблице танцоров хастла</param>
-        public Dancer(string name, string surname, Gender gender, int phone, int idsha)
+        public Dancer(Person person, int idsha)
         {
-            this.Name = name;
-            this.surname = surname;
-            this.gender = gender;
-            this.phone = phone;
+            this.person = person;
             this.idsha = idsha;
         }
         #endregion
@@ -74,36 +38,11 @@ namespace FO.Models
         /// Возвращает номер АСХ танцора
         /// Возвращает -1, если номер не указан
         /// </summary>
-        public int IDsha => idsha;
-        /// <summery>
-        /// Задаёт/возвращает телефон танцора
-        /// Возвращает -1, если номер не указан
-        /// </summery>
-        public int Phone
+        public int IDsha
         {
-            get => phone;
-            set { phone = value; OnPropertyChanged(); }
+            get => idsha;
+            set { idsha = value;OnPropertyChanged(); }
         }
-        /// <summary>
-        /// Задаёт/возвращает фамилию
-        /// </summary>
-        public string Surname
-        {
-            get => surname;
-            set { surname = value; OnPropertyChanged(); }
-        }
-        /// <summary>
-        /// Задаёт/возвращает Отчество
-        /// </summary>
-        public string Patronym
-        {
-            get => patronym;
-            set { patronym = value; OnPropertyChanged(); }
-        }
-        /// <summary>
-        /// Возвращает пол танцора
-        /// </summary>
-        public Gender Gender => gender;
         /// <summary>
         /// Задаёт/возвращает текущий класс танцора в классике
         /// </summary>
@@ -122,6 +61,17 @@ namespace FO.Models
             get => eventSubList;
             set { eventSubList = value; OnPropertyChanged(); }
         }
+        public Person Person
+        {
+            get => person;
+            set { person = value; OnPropertyChanged(); }
+        }
+        public List<Classes> Classes
+        {
+            get => classes;
+            set { classes = value; OnPropertyChanged(); }
+        }
+        public Guid PersonKey { get; set; }
         #endregion
         /**********************************************************/
         #region Перегрузка операторов
@@ -150,16 +100,50 @@ namespace FO.Models
 
         public override string ToString()
         {
-            var stringGender = gender == Gender.Female ? "Женский" : "Мужской";
+            //var stringGender = gender == Gender.Female ? "Женский" : "Мужской";
+            var ranking = string.Empty;
 
+            if (!(classes == null || classes.Count == 0))
+            {
+                ranking = "\nРейтинг АСХ\n";
+                var jnj = classes.Where((c) => c.SHAClasses.Direction == Direction.JnJ).ToList();
+                var classic = classes.Where((c) => c.SHAClasses.Direction == Direction.Classic).ToList();
+
+                if (jnj.Count > 0)
+                {
+                    ranking += "JnJ:\t\t";
+
+                    foreach (var jnjClass in jnj)
+                        ranking += $"{jnjClass} ";
+
+                    ranking += "\n";
+                }
+
+                if (classic.Count > 0)
+                {
+                    ranking += "Классика:\t";
+
+                    foreach (var classicClass in classic)
+                        ranking += $"{classicClass} ";
+
+                    ranking += "\n";
+                }
+            }
+
+            /*
             return
                 $"Номер АСХ:\t{idsha}\n" +
                 $"ФИО:\t\t{Name} {surname} {patronym}\n" +
-                $"Пол:\t\t{stringGender}\n" +/*
+                $"Пол:\t\t{stringGender}\n" +
                 $"Рейтинг\t\tАСХ\n" +
                 $"JnJ:\t\t{}{}\n" +
-                $"Классика:\t\t{}{}\n" +*/
+                $"Классика:\t\t{}{}\n" +
                 $"Телефон:\t{phone}\n";
+            */
+            return
+                $"Номер АСХ:\t{idsha}\n" +
+                $"{person}" +
+                $"{ranking}";
         }
     }
 }
