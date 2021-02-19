@@ -20,6 +20,7 @@ namespace FO.Models
         //private List<Classes> classes { get; set; }
         private List<Plan> plans;
         private List<LastEventsChanges> changes;
+        private List<Club> clubs;
 
 
         public List<Person> People
@@ -57,6 +58,12 @@ namespace FO.Models
         {
             get => changes;
             set { changes = value; OnPropertyChanged(); }
+        }
+
+        public List<Club> Clubs
+        {
+            get => clubs;
+            set { clubs = value; OnPropertyChanged(); }
         }
     }
 }

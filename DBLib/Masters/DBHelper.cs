@@ -44,6 +44,20 @@ namespace DBLib.Masters
             get => GetAllData();
             set { data= value; OnPropertyChanged(); }
         }
+        public void RegenerateDB()
+        {
+            using (var context = new EventContext())
+            {
+                context.RegenerateDB();
+
+                SetDefaultClasses();
+                GetAllData();
+
+                Console.WriteLine("--------------------");
+                Console.WriteLine("База была пересоздана!");
+                Console.WriteLine("--------------------");
+            }
+        }
 
         public async Task SetDefaultClassesAsync()
         {
@@ -92,7 +106,8 @@ namespace DBLib.Masters
                     Events = activities,
                     Groups = eventContext.GroupsOfOrganiziers.ToList(),
                     People = eventContext.People.ToList(),
-                    Plans = eventContext.Plans.ToList()
+                    Plans = eventContext.Plans.ToList(),
+                    Clubs = eventContext.Clubs.ToList()
                 };
             }
 

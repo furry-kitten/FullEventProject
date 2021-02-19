@@ -15,10 +15,11 @@ namespace DBLibTest
     {
         static void Main(string[] args)
         {
-            var mainClass = new DBHelper();
+            var dBHelper = new DBHelper();
             var settings = new UserSettings();
             var rule = new Rule();
-            var data = GetAllData(mainClass.Data.SHAClasses);
+
+            var data = GetAllData(dBHelper.Data.SHAClasses);
 
             rule.CreateTimerRule("1", "-", DateTime.Now.AddDays(3), TimerRuleType.MustBePaid);
             rule.CreateTimerRule("1", "-", DateTime.Now.AddDays(4), TimerRuleType.CanSubscribe);

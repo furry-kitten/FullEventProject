@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
 using System;
+using System.Threading.Tasks;
 
 namespace DBLib
 {
@@ -24,6 +25,7 @@ namespace DBLib
         public DbSet<LastEventsChanges> LastEventsChanges { get; set; }
         public DbSet<Periodicity> Periodicities { get; set; }
         public DbSet<Plan> Plans { get; set; }
+        public DbSet<Club> Clubs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -85,7 +87,18 @@ namespace DBLib
                 .HasMany((p) => p.Nominations)
                 .WithOne();
 
+            modelBuilder.Entity<Club>()
+                .HasOne(p => p.Group)
+                .WithOne(d => d.Club)
+                .HasForeignKey<GroupOfOrganiziers>(fk => fk.IdClub);
+
             //modelBuilder.Entity<Rule>().ToTable("RuleView", t => t.ExcludeFromMigrations());
+        }
+
+        public void RegenerateDB()
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
     }
 }

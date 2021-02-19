@@ -46,6 +46,7 @@
     <Compile Include="Models\AllData.cs" />
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="Models\Classes.cs" />
+    <Compile Include="Models\Club.cs" />
     <Compile Include="Models\DBClass.cs" />
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\LastEventsChanges.cs" />
