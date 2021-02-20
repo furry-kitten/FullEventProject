@@ -54,6 +54,9 @@
     <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\Club.cs" />
     <Compile Include="Models\DBClass.cs" />
+    <Compile Include="Models\ForClient\BaseModelVM.cs" />
+    <Compile Include="Models\ForClient\DancerBaseVM.cs" />
+    <Compile Include="Models\ForClient\EventBaseVM.cs" />
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\LastEventsChanges.cs" />
     <Compile Include="Models\Nomination.cs" />

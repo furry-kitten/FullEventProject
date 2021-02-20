@@ -1,21 +1,24 @@
-﻿using FO.Properties;
+﻿using FO.Models.ForClient;
+using FO.Properties;
 
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Soap;
+//using System.Runtime.Serialization.Formatters.Soap;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace FO.Models
 {
     public class UserSettings : BaseVM
     {
-        private static readonly string
+        private string
             currentDirectory = $@"{Environment.CurrentDirectory}",
             fileName = $"default",
             format = ".conf";
 
         private string filePath = string.Empty;
         private bool autoEnter = false;
+        private AllData data;
         //private Authentication authentication;
 
         private Settings settings = new Settings();
@@ -28,6 +31,15 @@ namespace FO.Models
 
             settings.Save();
             SaveChanges();
+        }
+        public UserSettings(string fileName)
+        {
+            this.fileName = fileName;
+        }
+        public AllData Data
+        {
+            get => data;
+            set { data = value; OnPropertyChanged(); }
         }
         /*
         public UserSettings(Authentication authentication, bool auto)
@@ -49,18 +61,26 @@ namespace FO.Models
             set { authentication = value; OnPropertyChanged(); }
         }
         */
-        public static string FileName => fileName;
-        public static string CurrentDirectory => currentDirectory;
+        public string FileName
+        {
+            get => fileName;
+            set { fileName = value; OnPropertyChanged(); }
+        }
+        public string CurrentDirectory
+        {
+            get => currentDirectory;
+            set { currentDirectory = value; OnPropertyChanged(); }
+        }
 
         public static UserSettings DeserializeSettings()
         {
             var settings = new UserSettings();
 
-            if (!Directory.Exists($@"{currentDirectory}"))
-                Directory.CreateDirectory($@"{currentDirectory}");
+            if (!Directory.Exists($@"{settings.currentDirectory}"))
+                Directory.CreateDirectory($@"{settings.currentDirectory}");
 
-            if (File.Exists($@"{currentDirectory}\{fileName}{format}"))
-                using (var file = new FileStream($@"{currentDirectory}\{fileName}{format}", FileMode.Open))
+            if (File.Exists($@"{settings.currentDirectory}\{settings.fileName}{settings.format}"))
+                using (var file = new FileStream($@"{settings.currentDirectory}\{settings.fileName}{settings.format}", FileMode.Open))
                 {
                     XmlSerializer formatter = new XmlSerializer(typeof(UserSettings));
                     settings = (UserSettings)formatter.Deserialize(file);
@@ -77,6 +97,11 @@ namespace FO.Models
                 settings.Save();
                 OnPropertyChanged();
             }
+        }
+
+        public async Task SaveChangesAsinc()
+        {
+            await Task.Run(() => SaveChanges());
         }
 
         public void SaveChanges()

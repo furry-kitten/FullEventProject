@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <Folder Include="Insert\" />
+    <Folder Include="Select\" />
+    <Folder Include="Update\" />
   </ItemGroup>
 
 </Project>

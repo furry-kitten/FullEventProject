@@ -31,7 +31,7 @@ namespace DBLibTest
             foreach (var danser in data.Dancers)
                 Console.WriteLine($"{danser}\n");
 
-            Console.WriteLine(UserSettings.CurrentDirectory);
+            Console.WriteLine(settings.CurrentDirectory);
 
             Console.ReadKey();
         }
