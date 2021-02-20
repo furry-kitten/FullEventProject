@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EDirection = FO.Models.Перечисления.Direction;
+﻿using EDirection = FO.Models.Перечисления.Direction;
 
 namespace FO.Models
 {
@@ -11,6 +6,7 @@ namespace FO.Models
     {
         private EDirection direction;
         private byte totalPoints = 0;
+        private int significance;
 
         public SHAClasses()
         {
@@ -38,6 +34,11 @@ namespace FO.Models
         {
             get => totalPoints;
             set { totalPoints = value; OnPropertyChanged(); }
+        }
+        public int Significance
+        {
+            get => significance;
+            set { significance = value; OnPropertyChanged(); }
         }
 
         public override string ToString()

@@ -1,6 +1,7 @@
 ﻿using DBLib.Masters;
 
 using FO.Models;
+using FO.Models.ForClient;
 using FO.Models.Rules.Enums;
 using FO.Models.Перечисления;
 
@@ -17,9 +18,44 @@ namespace DBLibTest
         {
             var dBHelper = new DBHelper();
             var settings = new UserSettings();
-            var rule = new Rule();
 
             var data = GetAllData(dBHelper.Data.SHAClasses);
+
+            foreach (var danser in data.Dancers)
+                Console.WriteLine($"{danser}\n");
+
+            Console.WriteLine("---------------------------------------------------");
+            //CheckRules(data);
+            CheckLECAddition(data);
+
+            foreach (var danser in data.Dancers)
+                Console.WriteLine($"{danser}\n");
+
+            Console.WriteLine(UserSettings.CurrentDirectory);
+
+            Console.ReadKey();
+        }
+
+        private static void CheckLECAddition(AllData data)
+        {
+            var @event = data.Activities[0].Event;
+            var changes = new Dictionary<Dancer, Dictionary<Direction, byte>>();
+
+            foreach(var dancer in data.Dancers)
+            {
+                var dancerChanges = new Dictionary<Direction, byte>();
+
+                dancerChanges.Add(Direction.Classic, 0);
+                dancerChanges.Add(Direction.JnJ, 0);
+
+                changes.Add(dancer, dancerChanges);
+            }
+
+            data.AddAllEventChanges(@event, changes);
+        }
+        private static void CheckRules(AllData data)
+        {
+            var rule = new Rule();
 
             rule.CreateTimerRule("1", "-", DateTime.Now.AddDays(3), TimerRuleType.MustBePaid);
             rule.CreateTimerRule("1", "-", DateTime.Now.AddDays(4), TimerRuleType.CanSubscribe);
@@ -27,21 +63,16 @@ namespace DBLibTest
             foreach (var danser in data.Dancers)
                 Console.WriteLine($"{danser}\n");
 
-            foreach (var danser in data.SHAClasses)
+            var shac = data.SHAClasses.OrderBy(c => c.Direction).ThenBy(c => c.Significance);
+            foreach (var danser in shac)
                 Console.WriteLine($"{danser}\n");
 
             foreach (var danser in data.Groups)
                 Console.WriteLine($"{danser}\n");
 
             Console.WriteLine("---------------------------------------------------");
-            Console.WriteLine(settings.FilePath);
-
-            Console.WriteLine("---------------------------------------------------");
             Console.WriteLine($"{rule} {DateTime.Now} {rule.Accepted(data.Dancers[0])} {rule.MustBePaid()}");
-
-            Console.ReadKey();
         }
-
         private static AllData GetAllData(List<SHAClasses> shaClasses)
         {
             var people = new List<Person>();
@@ -89,17 +120,38 @@ namespace DBLibTest
             }
 
             foreach (var dancer in dancers)
+            {
+                var significance = Convert.ToInt32(dancer.Person.Name) % 5 + 1;
                 dancer.Classes = new List<Classes>
                 {
-                    new Classes(dancer, shaClasses.ToList().Find(c => c.Direction == Direction.JnJ), Convert.ToByte(dancers.IndexOf(dancer))),
+                    new Classes(dancer, shaClasses.ToList().Find(c => c.Direction == Direction.JnJ && c.Significance == significance), Convert.ToByte(dancers.IndexOf(dancer)))
+                    {
+                        Points = Convert.ToByte(rdmCount.Next(0, 24))
+                    },
                     new Classes(dancer, shaClasses.ToList().Find(c => c.Direction == Direction.Classic), Convert.ToByte(dancers.IndexOf(dancer)))
+                    {
+                        Points = Convert.ToByte(rdmCount.Next(0, 24))
+                    }
                 };
+            }
+
+            events.Add(new Activity
+            {
+                Event = new Event
+                {
+                    Name = "Кубок АСХ",
+                    Dancers = dancers,
+                    Organiziers = groups[0],
+                    Type = EventType.Сompetition,
+                    LastEventsChanges = new List<LastEventsChanges>()
+                }
+            });
 
             return new AllData()
             {
                 Changes = changes,
                 Dancers = dancers,
-                Events = events,
+                Activities = events,
                 Groups = groups,
                 People = people,
                 Plans = plans,

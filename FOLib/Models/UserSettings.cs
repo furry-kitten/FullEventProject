@@ -1,13 +1,9 @@
 ﻿using FO.Properties;
 
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Soap;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace FO.Models
 {
@@ -16,7 +12,7 @@ namespace FO.Models
         private static readonly string
             currentDirectory = $@"{Environment.CurrentDirectory}",
             fileName = $"default",
-            format = ".stg";
+            format = ".conf";
 
         private string filePath = string.Empty;
         private bool autoEnter = false;
@@ -26,12 +22,12 @@ namespace FO.Models
 
         public UserSettings()
         {
-            autoEnter = false;
             //authentication = new Authentication();
             filePath = $@"{currentDirectory}\{fileName}{format}";
             settings.FilePath = filePath;
 
             settings.Save();
+            SaveChanges();
         }
         /*
         public UserSettings(Authentication authentication, bool auto)
@@ -66,11 +62,21 @@ namespace FO.Models
             if (File.Exists($@"{currentDirectory}\{fileName}{format}"))
                 using (var file = new FileStream($@"{currentDirectory}\{fileName}{format}", FileMode.Open))
                 {
-                    SoapFormatter formatter = new SoapFormatter();
+                    XmlSerializer formatter = new XmlSerializer(typeof(UserSettings));
                     settings = (UserSettings)formatter.Deserialize(file);
                 }
 
             return settings;
+        }
+        public string FilePath
+        {
+            get => settings.FilePath;
+            set
+            {
+                settings.FilePath = value;
+                settings.Save();
+                OnPropertyChanged();
+            }
         }
 
         public void SaveChanges()
@@ -80,7 +86,7 @@ namespace FO.Models
 
             using (var file = new FileStream(filePath, FileMode.OpenOrCreate))
             {
-                SoapFormatter formatter = new SoapFormatter();
+                XmlSerializer formatter = new XmlSerializer(typeof(UserSettings));
                 formatter.Serialize(file, this);
 
                 File.SetAttributes(file.Name, FileAttributes.Hidden);
@@ -96,16 +102,6 @@ namespace FO.Models
                     return settings.ConnectionString;
                 default:
                     return string.Empty;
-            }
-        }
-        public string FilePath
-        {
-            get => settings.FilePath;
-            set
-            {
-                settings.FilePath = value;
-                settings.Save();
-                OnPropertyChanged();
             }
         }
 

@@ -3,8 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FO.Models
 {
@@ -16,7 +14,10 @@ namespace FO.Models
 
         private List<Classes> classes = new List<Classes>();
         private Person person;
-        private List<Event> eventSubList;
+        private Teacher teacher;
+        private List<Event> eventSubList = new List<Event>();
+        private List<Club> clubs = new List<Club>();
+        private List<LastEventsChanges> lastEventsChanges = new List<LastEventsChanges>();
         #endregion
         //===========================================================================================
         #region Конструкторы
@@ -61,17 +62,33 @@ namespace FO.Models
             get => eventSubList;
             set { eventSubList = value; OnPropertyChanged(); }
         }
+        public Teacher Teacher
+        {
+            get => teacher;
+            set { teacher = value; OnPropertyChanged(); }
+        }
         public Person Person
         {
             get => person;
             set { person = value; OnPropertyChanged(); }
+        }
+        public List<Club> Clubs
+        {
+            get => clubs;
+            set { clubs = value; OnPropertyChanged(); }
         }
         public List<Classes> Classes
         {
             get => classes;
             set { classes = value; OnPropertyChanged(); }
         }
-        public Guid PersonKey { get; set; }
+        public Guid PersonId { get; set; }
+        public Guid TeacherId { get; set; }
+        public List<LastEventsChanges> LastEventsChanges
+        {
+            get => lastEventsChanges;
+            set { lastEventsChanges = value; OnPropertyChanged(); }
+        }
         #endregion
         /**********************************************************/
         #region Перегрузка операторов

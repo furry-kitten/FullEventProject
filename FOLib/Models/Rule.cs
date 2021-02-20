@@ -1,13 +1,9 @@
 ﻿using FO.Models.Rules;
 using FO.Models.Rules.Enums;
-using FO.Models.Перечисления;
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FO.Models
 {
@@ -15,7 +11,6 @@ namespace FO.Models
     {
         private List<CongruenceRule> congruenceRules = new List<CongruenceRule>();
         private List<TimerRule> timerRules = new List<TimerRule>();
-        private Func<bool> func;
 
         public Rule() { }
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FO.Models
+﻿namespace FO.Models
 {
     public class Classes : DBClass
     {
@@ -38,7 +32,8 @@ namespace FO.Models
             get => points;
             set { points = value; OnPropertyChanged(); }
         }
+
         public override string ToString() =>
-            $"{Name}{points}";
+            $"{shaClasses.Name} {points}";
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using FO.Models.Перечисления;
-using System.Collections.ObjectModel;
 using System.Reflection;
 using System.IO;
 
@@ -26,6 +23,7 @@ namespace FO.Models
         private GroupOfOrganiziers organizator = new GroupOfOrganiziers();
         private EventType type = new EventType();
         private List<Dancer> dancers = new List<Dancer>();
+        private List<LastEventsChanges> lastEventsChanges = new List<LastEventsChanges>();
 
 
         #endregion
@@ -154,6 +152,11 @@ namespace FO.Models
         {
             get => type;
             set { type = value; OnPropertyChanged(); }
+        }
+        public List<LastEventsChanges> LastEventsChanges
+        {
+            get => lastEventsChanges;
+            set { lastEventsChanges = value; OnPropertyChanged(); }
         }
         public Guid GroupId { get; set; }
         public Guid PeriodicityId { get; set; }

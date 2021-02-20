@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FO.Models
+﻿namespace FO.Models
 {
     public class LastEventsChanges : DBClass
     {
-        private List<Event> events = new List<Event>();
-        private List<Dancer> dancers = new List<Dancer>();
+        private Event @event;
+        private Dancer dancer;
         private byte
             jnjPointAdded = 0,
             classicPointAdded = 0;
@@ -17,15 +11,17 @@ namespace FO.Models
             nextJnJClass = false,
             nextClassicClass = false;
 
-        public List<Event> Events
+        public LastEventsChanges() { }
+
+        public Event Event
         {
-            get => events;
-            set { events = value; OnPropertyChanged(); }
+            get => @event;
+            set { @event = value; OnPropertyChanged(); }
         }
-        public List<Dancer> Dancers
+        public Dancer Dancer
         {
-            get => dancers;
-            set { dancers = value; OnPropertyChanged(); }
+            get => dancer;
+            set { dancer = value; OnPropertyChanged(); }
         }
         public byte JnJPointAdded
         {

@@ -13,7 +13,11 @@ namespace DBLib
     {
         public EventContext()
         {
+            /*
+            RegenerateDB();
+            /*/
             Database.EnsureCreated();
+            //*/
         }
 
         public DbSet<Person> People { get; set; }
@@ -55,11 +59,24 @@ namespace DBLib
             modelBuilder.Entity<Person>()
                 .HasOne(p => p.Dancer)
                 .WithOne(d => d.Person)
-                .HasForeignKey<Dancer>(fk => fk.PersonKey);
+                .HasForeignKey<Dancer>(fk => fk.PersonId);
+
+            modelBuilder.Entity<Dancer>()
+                .HasOne(p => p.Teacher)
+                .WithOne(d => d.Dancer)
+                .HasForeignKey<Dancer>(fk => fk.TeacherId);
 
             modelBuilder.Entity<Event>()
                 .HasMany((p) => p.Dancers)
                 .WithMany((f) => f.EventSubList);
+
+            modelBuilder.Entity<Club>()
+                .HasMany((p) => p.Teachers)
+                .WithMany((f) => f.Clubs);
+
+            modelBuilder.Entity<Teacher>()
+                .HasMany((p) => p.Groups)
+                .WithMany((f) => f.Teachers);
 
             modelBuilder.Entity<GroupOfOrganiziers>()
                 .HasOne((g) => g.Event)
@@ -71,13 +88,13 @@ namespace DBLib
                 .WithOne((e) => e.Periodicity)
                 .HasForeignKey<Event>((fk) => fk.PeriodicityId);
 
-            modelBuilder.Entity<LastEventsChanges>()
-                .HasMany((p) => p.Dancers)
-                .WithOne();
+            modelBuilder.Entity<Dancer>()
+                .HasMany((p) => p.LastEventsChanges)
+                .WithOne(f => f.Dancer);
 
-            modelBuilder.Entity<LastEventsChanges>()
-                .HasMany((p) => p.Events)
-                .WithOne();
+            modelBuilder.Entity<Event>()
+                .HasMany((p) => p.LastEventsChanges)
+                .WithOne(f => f.Event);
 
             modelBuilder.Entity<GroupOfOrganiziers>()
                 .HasMany(p => p.Dancers)
@@ -90,7 +107,7 @@ namespace DBLib
             modelBuilder.Entity<Club>()
                 .HasOne(p => p.Group)
                 .WithOne(d => d.Club)
-                .HasForeignKey<GroupOfOrganiziers>(fk => fk.IdClub);
+                .HasForeignKey<GroupOfOrganiziers>(fk => fk.ClubId);
 
             //modelBuilder.Entity<Rule>().ToTable("RuleView", t => t.ExcludeFromMigrations());
         }

@@ -1,6 +1,7 @@
 ﻿using DBLib.Defualts;
 
 using FO.Models;
+using FO.Models.ForClient;
 
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace DBLib.Masters
         {
             connectionString = Constants.HomeConnectionString;
 
+            using (var context = new EventContext()) { }
+            
             SetDefaultClasses();
             GetAllData();
 
@@ -103,7 +106,7 @@ namespace DBLib.Masters
                     SHAClasses = eventContext.SHAClasses.ToList(),
                     Changes = eventContext.LastEventsChanges.ToList(),
                     Dancers = eventContext.Dancers.ToList(),
-                    Events = activities,
+                    Activities = activities,
                     Groups = eventContext.GroupsOfOrganiziers.ToList(),
                     People = eventContext.People.ToList(),
                     Plans = eventContext.Plans.ToList(),

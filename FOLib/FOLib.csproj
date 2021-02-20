@@ -32,7 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Activity.cs" />
-    <Compile Include="Models\AllData.cs" />
+    <Compile Include="Models\ForClient\AllData.cs" />
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="Models\Classes.cs" />
     <Compile Include="Models\Club.cs" />
@@ -60,6 +66,7 @@
     <Compile Include="Models\Rules\TimerRule.cs" />
     <Compile Include="Models\Rules\CongruenceRule.cs" />
     <Compile Include="Models\SHAClasses.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Перечисления\ClassicClasses.cs" />
     <Compile Include="Models\Перечисления\ControlsForTracking.cs" />
     <Compile Include="Models\Перечисления\Direction.cs" />
@@ -83,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
