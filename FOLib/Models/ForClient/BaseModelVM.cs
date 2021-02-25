@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FO.Models.Перечисления;
+
+using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +13,17 @@ namespace FO.Models.ForClient
     public class BaseModelVM : BaseVM
     {
         private UserSettings userSettings;
+        private string content;
 
         public BaseModelVM()
         {
             GeneralSettings();
+            //content = new APIReader().GetSHAClassesString();
         }
         public BaseModelVM(UserSettings settings)
         {
             userSettings = settings;
+            //content = new APIReader().GetSHAClassesString();
         }
 
         public UserSettings Settings
@@ -29,5 +36,7 @@ namespace FO.Models.ForClient
         {
             userSettings = UserSettings.DeserializeSettings();
         }
+
+        public List<SHAClasses> GetSHAClasses()=> JsonConvert.DeserializeObject<List<SHAClasses>>(content);
     }
 }

@@ -5,6 +5,8 @@ using FO.Models.ForClient;
 using FO.Models.Rules.Enums;
 using FO.Models.Перечисления;
 
+using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,10 +18,11 @@ namespace DBLibTest
     {
         static void Main(string[] args)
         {
-            var dBHelper = new DBHelper();
-            var settings = new UserSettings();
+            //var dBHelper = new DBHelper();
+            //var settings = new UserSettings();
+            /*
 
-            var data = GetAllData(dBHelper.Data.SHAClasses);
+            var data = dBHelper.Data;
 
             foreach (var danser in data.Dancers)
                 Console.WriteLine($"{danser}\n");
@@ -32,8 +35,34 @@ namespace DBLibTest
                 Console.WriteLine($"{danser}\n");
 
             Console.WriteLine(settings.CurrentDirectory);
+            */
+            /*
+            var shaclasses = new APIReader().GetSHAClasses();
 
-            Console.ReadKey();
+            foreach (var shaclass in shaclasses)
+                Console.WriteLine($"{shaclass}\n");
+            */
+
+            var vm = new SkatingSystem(new Event());
+
+            var exit = ConsoleKey.Enter;
+
+            while (exit != ConsoleKey.Escape)
+            {
+                Console.Write("Место: ");
+                var placemant = int.Parse(Console.ReadLine());
+
+                Console.Write("Количество пар: ");
+                var count = int.Parse(Console.ReadLine());
+
+                var points = vm.GetPointByPlacement(placemant, count, false);
+
+                Console.WriteLine($"Получено баллов: {points}\n" +
+                    $"Enter - для продолжения\n" +
+                    $"Exc - для завершения\n");
+
+                exit = Console.ReadKey().Key;
+            }
         }
 
         private static void CheckLECAddition(AllData data)

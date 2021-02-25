@@ -16,5 +16,5 @@ P:\Мои приложения\Проект Сампо\SampoClient\App.xaml
 20-1746338575
 StyleDictionaries\AuthStyles.xaml;StyleDictionaries\BaseStyliesDictionary.xaml;StyleDictionaries\ButtonDictionary.xaml;StyleDictionaries\RulesDictionary.xaml;StyleDictionaries\ViewDancersDictionary.xaml;StyleDictionaries\ViewInformationDictionary.xaml;StyleDictionaries\WindowStylesDictionary.xaml;Views\Pages\CreateRulesPage.xaml;Views\Pages\CreateSampoPage.xaml;Views\Pages\CreateUserPage.xaml;Views\Pages\MainPage.xaml;Views\Pages\SampoPage.xaml;Views\Windows\AuthanenticationWindow.xaml;Views\Windows\MainWindow.xaml;
 
-False
+True
 

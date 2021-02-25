@@ -27,6 +27,7 @@ namespace DBLib
         public DbSet<Classes> Classes { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<LastEventsChanges> LastEventsChanges { get; set; }
+        public DbSet<NominationCompetitors> NominationCompetitors { get; set; }
         public DbSet<Periodicity> Periodicities { get; set; }
         public DbSet<Plan> Plans { get; set; }
         public DbSet<Club> Clubs { get; set; }
@@ -48,6 +49,10 @@ namespace DBLib
                 .Property((p) => p.Direction)
                 .HasConversion<string>();
 
+            modelBuilder.Entity<Nomination>()
+                .Property((p) => p.Type)
+                .HasConversion<string>();
+
             modelBuilder.Entity<SHAClasses>()
                 .Property((p) => p.Direction)
                 .HasConversion<string>();
@@ -55,6 +60,26 @@ namespace DBLib
             modelBuilder.Entity<Event>()
                 .Property((p) => p.Type)
                 .HasConversion<string>();
+
+            modelBuilder.Entity<NominationCompetitors>()
+                .Property((p) => p.DanserType)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Event>()
+                .HasMany((p) => p.Dancers)
+                .WithMany((f) => f.EventSubList);
+
+            modelBuilder.Entity<Event>()
+                .HasMany((p) => p.LastEventsChanges)
+                .WithOne(f => f.Event);
+
+            modelBuilder.Entity<Event>()
+                .HasMany((p) => p.Nominations)
+                .WithOne();
+
+            modelBuilder.Entity<Event>()
+                .HasMany((p) => p.NominationCompetitors)
+                .WithOne((f) => f.Event);
 
             modelBuilder.Entity<Person>()
                 .HasOne(p => p.Dancer)
@@ -66,48 +91,36 @@ namespace DBLib
                 .WithOne(d => d.Dancer)
                 .HasForeignKey<Dancer>(fk => fk.TeacherId);
 
-            modelBuilder.Entity<Event>()
-                .HasMany((p) => p.Dancers)
-                .WithMany((f) => f.EventSubList);
+            modelBuilder.Entity<Dancer>()
+                .HasMany((p) => p.LastEventsChanges)
+                .WithOne(f => f.Dancer);
 
             modelBuilder.Entity<Club>()
                 .HasMany((p) => p.Teachers)
                 .WithMany((f) => f.Clubs);
 
-            modelBuilder.Entity<Teacher>()
-                .HasMany((p) => p.Groups)
-                .WithMany((f) => f.Teachers);
+            modelBuilder.Entity<Club>()
+                .HasOne(p => p.Group)
+                .WithOne(d => d.Club)
+                .HasForeignKey<GroupOfOrganiziers>(fk => fk.ClubId);
 
             modelBuilder.Entity<GroupOfOrganiziers>()
                 .HasOne((g) => g.Event)
                 .WithOne((e) => e.Organiziers)
                 .HasForeignKey<Event>((fk) => fk.GroupId);
 
-            modelBuilder.Entity<Periodicity>()
-                .HasOne((g) => g.Event)
-                .WithOne((e) => e.Periodicity)
-                .HasForeignKey<Event>((fk) => fk.PeriodicityId);
-
-            modelBuilder.Entity<Dancer>()
-                .HasMany((p) => p.LastEventsChanges)
-                .WithOne(f => f.Dancer);
-
-            modelBuilder.Entity<Event>()
-                .HasMany((p) => p.LastEventsChanges)
-                .WithOne(f => f.Event);
-
             modelBuilder.Entity<GroupOfOrganiziers>()
                 .HasMany(p => p.Dancers)
                 .WithOne();
 
-            modelBuilder.Entity<Event>()
-                .HasMany((p) => p.Nominations)
-                .WithOne();
+            modelBuilder.Entity<Teacher>()
+                .HasMany((p) => p.Groups)
+                .WithMany((f) => f.Teachers);
 
-            modelBuilder.Entity<Club>()
-                .HasOne(p => p.Group)
-                .WithOne(d => d.Club)
-                .HasForeignKey<GroupOfOrganiziers>(fk => fk.ClubId);
+            modelBuilder.Entity<Periodicity>()
+                .HasOne((g) => g.Event)
+                .WithOne((e) => e.Periodicity)
+                .HasForeignKey<Event>((fk) => fk.PeriodicityId);
 
             //modelBuilder.Entity<Rule>().ToTable("RuleView", t => t.ExcludeFromMigrations());
         }

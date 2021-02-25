@@ -30,7 +30,7 @@ namespace FO.Models
             settings.FilePath = filePath;
 
             settings.Save();
-            SaveChanges();
+            //SaveChanges();
         }
         public UserSettings(string fileName)
         {

@@ -5,6 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Insert\**" />
+    <Compile Remove="Select\**" />
+    <Compile Remove="Update\**" />
+    <EmbeddedResource Remove="Insert\**" />
+    <EmbeddedResource Remove="Select\**" />
+    <EmbeddedResource Remove="Update\**" />
+    <None Remove="Insert\**" />
+    <None Remove="Select\**" />
+    <None Remove="Update\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
@@ -19,12 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FOLib\FOLib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Insert\" />
-    <Folder Include="Select\" />
-    <Folder Include="Update\" />
   </ItemGroup>
 
 </Project>

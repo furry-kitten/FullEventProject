@@ -1,4 +1,8 @@
-﻿using EDirection = FO.Models.Перечисления.Direction;
+﻿using FO.Models.Перечисления;
+
+using System.Collections.Generic;
+
+using EDirection = FO.Models.Перечисления.Direction;
 
 namespace FO.Models
 {
@@ -6,6 +10,7 @@ namespace FO.Models
     {
         private decimal? price;
         private EDirection direction;
+        private NominationType type;
 
         public Nomination() : base() { }
         public Nomination(string name, decimal price, string comment) : base(name, comment)
@@ -22,6 +27,11 @@ namespace FO.Models
         {
             get => direction;
             set { direction = value; OnPropertyChanged(); }
+        }
+        public NominationType Type
+        {
+            get => type;
+            set { type = value; OnPropertyChanged(); }
         }
     }
 }

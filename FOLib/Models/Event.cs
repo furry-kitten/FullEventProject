@@ -17,12 +17,15 @@ namespace FO.Models
         private string location;
         private string currency = "RUB";
         private char shortCurrency = 'р';
+        private decimal singleNominationPrice;
+        private decimal pairNominationPrice;
 
         private List<Nomination> nominations;
         private Periodicity periodicity;
         private GroupOfOrganiziers organizator = new GroupOfOrganiziers();
         private EventType type = new EventType();
         private List<Dancer> dancers = new List<Dancer>();
+        private List<NominationCompetitors> nominationCompetitors = new List<NominationCompetitors>();
         private List<LastEventsChanges> lastEventsChanges = new List<LastEventsChanges>();
 
 
@@ -114,6 +117,24 @@ namespace FO.Models
                 OnPropertyChanged();
             }
         }
+        public decimal SingleNominationPrice
+        {
+            get => singleNominationPrice;
+            set
+            {
+                singleNominationPrice = value;
+                OnPropertyChanged();
+            }
+        }
+        public decimal PairNominationPrice
+        {
+            get => pairNominationPrice;
+            set
+            {
+                pairNominationPrice = value;
+                OnPropertyChanged();
+            }
+        }
         public List<Nomination> Nominations
         {
             get => nominations;
@@ -148,6 +169,11 @@ namespace FO.Models
             get => dancers;
             set { dancers = value; OnPropertyChanged(); }
         }
+        public List<NominationCompetitors> NominationCompetitors
+        {
+            get => nominationCompetitors;
+            set { nominationCompetitors = value; OnPropertyChanged(); }
+        }
         public EventType Type
         {
             get => type;
@@ -163,8 +189,17 @@ namespace FO.Models
         #endregion
         /**********************************************************/
         #region Методы класса
-        public List<Dancer> Liders() => dancers.Where((d) => d.Person.Gender == Gender.Male).ToList();
-        public List<Dancer> Followers() => dancers.Where((d) => d.Person.Gender == Gender.Female).ToList();
+        public List<Dancer> Liders(Nomination nomination) => nominationCompetitors.Find((nc) => nc.Nomination == nomination && nc.DanserType == DanserType.Lider).Dancers;
+        public List<Dancer> Followers(Nomination nomination) => nominationCompetitors.Find((nc) => nc.Nomination == nomination && nc.DanserType == DanserType.Follower).Dancers;
+        public Dictionary<DanserType, List<Dancer>> GetNominactionDancers(Nomination nomination)
+        {
+            var pairs = new Dictionary<DanserType, List<Dancer>>();
+
+            pairs.Add(DanserType.Lider, Liders(nomination));
+            pairs.Add(DanserType.Follower, Followers(nomination));
+
+            return pairs;
+        }
         /// <summary>
         /// Добавляет танцора в список сампо
         /// </summary>
@@ -256,6 +291,7 @@ namespace FO.Models
                     rules.Add(rulesfile.ReadString());
             }
         }
+        public SkatingSystem StartEvent() => new SkatingSystem(this);
         #endregion
         /**********************************************************/
         #region Перегрузка операторов

@@ -1,6 +1,6 @@
 using System;
 
-namespace FORESTAPI
+namespace FORestAPI
 {
     public class WeatherForecast
     {

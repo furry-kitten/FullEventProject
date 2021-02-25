@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("FORESTAPI")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FORestAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("FORESTAPI")]
-[assembly: System.Reflection.AssemblyTitleAttribute("FORESTAPI")]
+[assembly: System.Reflection.AssemblyProductAttribute("FORestAPI")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FORestAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

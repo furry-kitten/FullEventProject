@@ -5,3 +5,6 @@ P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.dll
 P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.pdb
 P:\Мои приложения\Проект Сампо\FOLib\bin\Debug\FOLib.dll.config
 P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.csprojAssemblyReference.cache
+P:\Мои приложения\Проект Сампо\FOLib\bin\Debug\Newtonsoft.Json.dll
+P:\Мои приложения\Проект Сампо\FOLib\bin\Debug\Newtonsoft.Json.xml
+P:\Мои приложения\Проект Сампо\FOLib\obj\Debug\FOLib.csproj.CopyComplete

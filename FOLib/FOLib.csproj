@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -49,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\APIReader.cs" />
+    <Compile Include="Models\Constants\Constants.cs" />
     <Compile Include="Models\ForClient\AllData.cs" />
     <Compile Include="Models\BaseVM.cs" />
     <Compile Include="Models\Classes.cs" />
@@ -60,6 +65,7 @@
     <Compile Include="Models\GroupOfOrganiziers.cs" />
     <Compile Include="Models\LastEventsChanges.cs" />
     <Compile Include="Models\Nomination.cs" />
+    <Compile Include="Models\NominationCompetitors.cs" />
     <Compile Include="Models\Periodicity.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Plan.cs" />
@@ -69,9 +75,11 @@
     <Compile Include="Models\Rules\TimerRule.cs" />
     <Compile Include="Models\Rules\CongruenceRule.cs" />
     <Compile Include="Models\SHAClasses.cs" />
+    <Compile Include="Models\SkatingSystem.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Перечисления\ClassicClasses.cs" />
     <Compile Include="Models\Перечисления\ControlsForTracking.cs" />
+    <Compile Include="Models\Перечисления\DanserType.cs" />
     <Compile Include="Models\Перечисления\Direction.cs" />
     <Compile Include="Models\Перечисления\EventType.cs" />
     <Compile Include="Models\Перечисления\Gender.cs" />
@@ -80,6 +88,7 @@
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\UserSettings.cs" />
+    <Compile Include="Models\Перечисления\NominationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

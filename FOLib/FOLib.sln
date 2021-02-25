@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOLib", "FOLib.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBLib", "..\DBLib\DBLib.csproj", "{B937F5CE-9502-4372-8750-9D59052C43D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibTest", "..\DBLibTest\DBLibTest.csproj", "{962E979A-E4B5-4127-8331-FE24BFF5E51C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBLibTest", "..\DBLibTest\DBLibTest.csproj", "{962E979A-E4B5-4127-8331-FE24BFF5E51C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FORestAPI", "..\FORestAPI\FORestAPI.csproj", "{BB99ED20-98D5-4837-ABC3-D7753F0C5683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampoClient", "..\SampoClient\SampoClient.csproj", "{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,22 @@ Global
 		{962E979A-E4B5-4127-8331-FE24BFF5E51C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{962E979A-E4B5-4127-8331-FE24BFF5E51C}.Release|x86.ActiveCfg = Release|Any CPU
 		{962E979A-E4B5-4127-8331-FE24BFF5E51C}.Release|x86.Build.0 = Release|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Debug|x86.Build.0 = Debug|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB99ED20-98D5-4837-ABC3-D7753F0C5683}.Release|x86.Build.0 = Release|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Debug|x86.Build.0 = Debug|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Release|x86.ActiveCfg = Release|Any CPU
+		{0EF20AAC-413F-4EAB-A3CD-E2C6B87A4709}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
