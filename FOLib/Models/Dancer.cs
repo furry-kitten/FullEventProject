@@ -83,7 +83,7 @@ namespace FO.Models
             set { classes = value; OnPropertyChanged(); }
         }
         public Guid PersonId { get; set; }
-        public Guid TeacherId { get; set; }
+        public Guid? TeacherId { get; set; }
         public List<LastEventsChanges> LastEventsChanges
         {
             get => lastEventsChanges;
@@ -104,8 +104,19 @@ namespace FO.Models
             }
             catch(Exception e)
             {
-                throw new Exception(e.Message, e.InnerException);
+                Console.WriteLine($"{e.Message}\n" +
+                    $"{e.InnerException.Message}");
+
+                return false;
             }
+
+            /*
+            if (dancer == null)
+            {
+                Console.WriteLine($"Было получено пустое значение");
+                return false;
+            }
+            */
 
             return dancer.IDsha == this.idsha;
         }
@@ -119,6 +130,7 @@ namespace FO.Models
         {
             //var stringGender = gender == Gender.Female ? "Женский" : "Мужской";
             var ranking = string.Empty;
+            var stringClubs = "Клуб(ы):\t";
 
             if (!(classes == null || classes.Count == 0))
             {
@@ -128,25 +140,27 @@ namespace FO.Models
 
                 if (jnj.Count > 0)
                 {
-                    ranking += "JnJ:\t\t";
+                    ranking += "JnJ:";
 
                     foreach (var jnjClass in jnj)
-                        ranking += $"{jnjClass} ";
+                        ranking += $"\n\t\t{jnjClass}";
 
                     ranking += "\n";
                 }
 
                 if (classic.Count > 0)
                 {
-                    ranking += "Классика:\t";
+                    ranking += "Классика:";
 
                     foreach (var classicClass in classic)
-                        ranking += $"{classicClass} ";
+                        ranking += $"\n\t\t{classicClass}";
 
                     ranking += "\n";
                 }
             }
 
+            foreach (var club in clubs)
+                stringClubs += $" {club}";
             /*
             return
                 $"Номер АСХ:\t{idsha}\n" +
@@ -160,6 +174,7 @@ namespace FO.Models
             return
                 $"Номер АСХ:\t{idsha}\n" +
                 $"{person}" +
+                $"\n{stringClubs}" +
                 $"{ranking}";
         }
     }

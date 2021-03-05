@@ -12,5 +12,9 @@
     <ProjectReference Include="..\DBLib\DBLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 
 </Project>

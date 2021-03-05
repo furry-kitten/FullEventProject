@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 
 namespace DBLibTest
@@ -18,7 +19,7 @@ namespace DBLibTest
     {
         static void Main(string[] args)
         {
-            //var dBHelper = new DBHelper();
+            var dBHelper = new DBHelper();
             //var settings = new UserSettings();
             /*
 
@@ -42,24 +43,20 @@ namespace DBLibTest
             foreach (var shaclass in shaclasses)
                 Console.WriteLine($"{shaclass}\n");
             */
-
-            var vm = new SkatingSystem(new Event());
+            var refreshing = new DBRefreshing(dBHelper.Data);
+            var path = @"C:\Users\tokar\Downloads\dancers.xlsm";//Console.ReadLine();
+            var data = refreshing.Refresh(path);
 
             var exit = ConsoleKey.Enter;
 
             while (exit != ConsoleKey.Escape)
             {
-                Console.Write("Место: ");
-                var placemant = int.Parse(Console.ReadLine());
+                Console.Write("Имя: ");
+                var name = Console.ReadLine();
+                var filter = data.Dancers.FindAll(d => d.Person.Name == name).OrderBy(d => d.Person.Sername);
 
-                Console.Write("Количество пар: ");
-                var count = int.Parse(Console.ReadLine());
-
-                var points = vm.GetPointByPlacement(placemant, count, false);
-
-                Console.WriteLine($"Получено баллов: {points}\n" +
-                    $"Enter - для продолжения\n" +
-                    $"Exc - для завершения\n");
+                foreach(var dancer in filter)
+                    Console.WriteLine($"{dancer}\n");
 
                 exit = Console.ReadKey().Key;
             }
@@ -186,6 +183,29 @@ namespace DBLibTest
                 Plans = plans,
                 SHAClasses = shaClasses
             };
+        }
+        private static void CheckPoint()
+        {
+            var vm = new SkatingSystem(new Event());
+
+            var exit = ConsoleKey.Enter;
+
+            while (exit != ConsoleKey.Escape)
+            {
+                Console.Write("Место: ");
+                var placemant = int.Parse(Console.ReadLine());
+
+                Console.Write("Количество пар: ");
+                var count = int.Parse(Console.ReadLine());
+
+                var points = vm.GetPointByPlacement(placemant, count, false);
+
+                Console.WriteLine($"Получено баллов: {points}\n" +
+                    $"Enter - для продолжения\n" +
+                    $"Exc - для завершения\n");
+
+                exit = Console.ReadKey().Key;
+            }
         }
     }
 }

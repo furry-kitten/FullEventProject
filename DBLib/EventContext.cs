@@ -31,6 +31,7 @@ namespace DBLib
         public DbSet<Periodicity> Periodicities { get; set; }
         public DbSet<Plan> Plans { get; set; }
         public DbSet<Club> Clubs { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,6 +42,9 @@ namespace DBLib
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<NominationCompetitors>()
+                .Ignore((nc) => nc.DancerPlacemant);
+
             modelBuilder.Entity<Person>()
                 .Property((p) => p.Gender)
                 .HasConversion<string>();
@@ -85,11 +89,6 @@ namespace DBLib
                 .HasOne(p => p.Dancer)
                 .WithOne(d => d.Person)
                 .HasForeignKey<Dancer>(fk => fk.PersonId);
-
-            modelBuilder.Entity<Dancer>()
-                .HasOne(p => p.Teacher)
-                .WithOne(d => d.Dancer)
-                .HasForeignKey<Dancer>(fk => fk.TeacherId);
 
             modelBuilder.Entity<Dancer>()
                 .HasMany((p) => p.LastEventsChanges)

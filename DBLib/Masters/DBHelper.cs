@@ -1,4 +1,6 @@
 ﻿using DBLib.Defualts;
+using DBLib.Masters.Insert;
+using DBLib.Masters.Update;
 
 using FO.Models;
 using FO.Models.ForClient;
@@ -70,6 +72,18 @@ namespace DBLib.Masters
         {
             await Task.Run(() => GetAllData());
         }
+        public void Insert(AllData data) => new InsertDataBase().InsertAllNewData(data);
+        public void Update(AllData data)
+        {
+            var update = new UpdateDataBase();
+
+            update.UpdateItem(data.People);
+            update.UpdateItem(data.Clubs);
+            update.UpdateItem(data.Dancers);
+            update.UpdateItem(data.Classes);
+            update.UpdateItem(data.Groups);
+            update.UpdateItem(data.SHAClasses);
+        }
 
         private void SetDefaultClasses()
         {
@@ -110,7 +124,8 @@ namespace DBLib.Masters
                     Groups = eventContext.GroupsOfOrganiziers.ToList(),
                     People = eventContext.People.ToList(),
                     Plans = eventContext.Plans.ToList(),
-                    Clubs = eventContext.Clubs.ToList()
+                    Clubs = eventContext.Clubs.ToList(),
+                    Classes = eventContext.Classes.ToList()
                 };
             }
 

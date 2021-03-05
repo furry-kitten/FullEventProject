@@ -48,6 +48,10 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.5.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.3, )"

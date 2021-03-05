@@ -65,3 +65,16 @@ P:\Мои приложения\Проект Сампо\DBLibTest\obj\Debug\netco
 P:\Мои приложения\Проект Сампо\DBLibTest\obj\Debug\netcoreapp3.1\DBLibTest.dll
 P:\Мои приложения\Проект Сампо\DBLibTest\obj\Debug\netcoreapp3.1\DBLibTest.pdb
 P:\Мои приложения\Проект Сампо\DBLibTest\obj\Debug\netcoreapp3.1\DBLibTest.genruntimeconfig.cache
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\EPPlus.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\Microsoft.IO.RecyclableMemoryStream.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+P:\Мои приложения\Проект Сампо\DBLibTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll

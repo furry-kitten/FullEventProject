@@ -48,7 +48,7 @@ namespace FO.Models
 
         public override string ToString()
         {
-            return $"ФИО:\t\t{Name} {sername} {patronym}\n" +
+            return $"ФИО:\t\t{sername} {Name} {patronym}\n" +
                 $"Пол:\t\t{gender}\n" +
                 $"Почта:\t\t{mail}\n" +
                 $"Телефон:\t\t{modile}";

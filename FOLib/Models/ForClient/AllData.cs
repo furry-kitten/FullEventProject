@@ -14,15 +14,19 @@ namespace FO.Models.ForClient
     /// </summary>
     public sealed class AllData : BaseVM
     {
-        private List<Person> people;
-        private List<Dancer> dancers;
-        private List<Activity> activities;
-        private List<GroupOfOrganiziers> groups;
-        private List<SHAClasses> shaClasses;
+        private List<Person> people = new List<Person>();
+        private List<Dancer> dancers = new List<Dancer>();
+        private List<Activity> activities = new List<Activity>();
+        private List<GroupOfOrganiziers> groups = new List<GroupOfOrganiziers>();
+        private List<SHAClasses> shaClasses = new List<SHAClasses>();
         //private List<Classes> classes { get; set; }
-        private List<Plan> plans;
-        private List<LastEventsChanges> changes;
-        private List<Club> clubs;
+        private List<Plan> plans = new List<Plan>();
+        private List<LastEventsChanges> changes = new List<LastEventsChanges>();
+        private List<Club> clubs = new List<Club>();
+        private List<Classes> classes = new List<Classes>();
+        private List<NominationCompetitors> nominationCompetitors = new List<NominationCompetitors>();
+        private List<Periodicity> periodicities = new List<Periodicity>();
+        private List<Teacher> teachers = new List<Teacher>();
 
 
         public List<Person> People
@@ -61,11 +65,30 @@ namespace FO.Models.ForClient
             get => changes;
             set { changes = value; OnPropertyChanged(); }
         }
-
         public List<Club> Clubs
         {
             get => clubs;
             set { clubs = value; OnPropertyChanged(); }
+        }
+        public List<Classes> Classes
+        {
+            get => classes;
+            set { classes = value; OnPropertyChanged(); }
+        }
+        public List<NominationCompetitors> NominationCompetitors
+        {
+            get => nominationCompetitors;
+            set { nominationCompetitors = value; OnPropertyChanged(); }
+        }
+        public List<Periodicity> Periodicities
+        {
+            get => periodicities;
+            set { periodicities = value; OnPropertyChanged(); }
+        }
+        public List<Teacher> Teachers
+        {
+            get => teachers;
+            set { teachers = value; OnPropertyChanged(); }
         }
 
         public void AddAllEventChanges(Event @event, Dictionary<Dancer, Dictionary<Direction, byte>> changes)
