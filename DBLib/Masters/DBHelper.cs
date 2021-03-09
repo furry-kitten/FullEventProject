@@ -72,6 +72,7 @@ namespace DBLib.Masters
         {
             await Task.Run(() => GetAllData());
         }
+        public void RefreshDB(AllData data) => new InsertDataBase().Refresh(data);
         public void Insert(AllData data) => new InsertDataBase().InsertAllNewData(data);
         public void Update(AllData data)
         {

@@ -18,25 +18,22 @@ namespace DBLib.Masters.Insert
                 if (refresh)
                     context.RegenerateDB();
 
-                context.People.AddRange(data.People);
-                context.Dancers.AddRange(data.Dancers);
-                context.LastEventsChanges.AddRange(data.Changes);
                 context.NominationCompetitors.AddRange(data.NominationCompetitors);
+                context.LastEventsChanges.AddRange(data.Changes);
                 context.Periodicities.AddRange(data.Periodicities);
-                context.Classes.AddRange(data.Classes);
-                context.GroupsOfOrganiziers.AddRange(data.Groups);
                 context.Plans.AddRange(data.Plans);
                 context.Events.AddRange(GetEvents(data.Activities));
+                context.Classes.AddRange(data.Classes);
+                context.GroupsOfOrganiziers.AddRange(data.Groups);
                 context.Clubs.AddRange(data.Clubs);
+                context.People.AddRange(data.People);
+                context.Dancers.AddRange(data.Dancers);
                 context.SHAClasses.AddRange(data.SHAClasses);
 
                 context.SaveChanges();
             }
         }
-        public void Refresh(AllData data)
-        {
-            InsertAllNewData(data, true);
-        }
+        public void Refresh(AllData data) => InsertAllNewData(data, true);
 
         private void AddDancers(EventContext context, List<Dancer> dancers)
         {

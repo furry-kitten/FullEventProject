@@ -110,22 +110,24 @@ namespace FO.Models
                 return false;
             }
 
-            /*
             if (dancer == null)
-            {
-                Console.WriteLine($"Было получено пустое значение");
-                return false;
-            }
-            */
+                dancer = new Dancer();
 
             return dancer.IDsha == this.idsha;
         }
+        public Classes[] GetCurrentClasses()
+        {
+            Classes[] currentClass = new Classes[2];
+            var classes = this.classes.OrderBy(c => c.SHAClasses.Significance).ToList();
+            var jnj = classes.Where(c => c.SHAClasses.Direction == Direction.JnJ).ToList();
+            var classic = classes.Where(c => c.SHAClasses.Direction == Direction.Classic).ToList();
 
+            return currentClass;
+        }
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
-
         public override string ToString()
         {
             //var stringGender = gender == Gender.Female ? "Женский" : "Мужской";

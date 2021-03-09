@@ -21,8 +21,8 @@ namespace DBLibTest
         {
             var dBHelper = new DBHelper();
             //var settings = new UserSettings();
-            /*
 
+            /*
             var data = dBHelper.Data;
 
             foreach (var danser in data.Dancers)
@@ -46,6 +46,8 @@ namespace DBLibTest
             var refreshing = new DBRefreshing(dBHelper.Data);
             var path = @"C:\Users\tokar\Downloads\dancers.xlsm";//Console.ReadLine();
             var data = refreshing.Refresh(path);
+            /*
+            */
 
             var exit = ConsoleKey.Enter;
 
@@ -55,8 +57,18 @@ namespace DBLibTest
                 var name = Console.ReadLine();
                 var filter = data.Dancers.FindAll(d => d.Person.Name == name).OrderBy(d => d.Person.Sername);
 
-                foreach(var dancer in filter)
-                    Console.WriteLine($"{dancer}\n");
+                foreach (var dancer in filter)
+                {
+                    Console.WriteLine($"{dancer}");
+
+                    var classes = dancer.GetCurrentClasses();
+
+                    foreach (var c in classes)
+                    {
+                        Console.WriteLine($"{c}");
+                    }
+                    Console.WriteLine();
+                }
 
                 exit = Console.ReadKey().Key;
             }

@@ -43,7 +43,6 @@ namespace DBLib.Defualts
                 {
                     Name = "Champion",
                     Direction = Direction.JnJ,
-                    TotalPoints = 0,
                     Significance = 5
                 },
                 new SHAClasses
@@ -78,7 +77,6 @@ namespace DBLib.Defualts
                 {
                     Name = "A",
                     Direction = Direction.Classic,
-                    TotalPoints = 0,
                     Significance = 5
                 }
             };

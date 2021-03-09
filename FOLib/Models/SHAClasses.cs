@@ -5,7 +5,7 @@ namespace FO.Models
     public class SHAClasses : DBClass
     {
         private EDirection direction;
-        private byte totalPoints = 0;
+        private byte? totalPoints;
         private int significance;
 
         public SHAClasses()
@@ -30,7 +30,7 @@ namespace FO.Models
             get => direction;
             set { direction = value; OnPropertyChanged(); }
         }
-        public byte TotalPoints
+        public byte? TotalPoints
         {
             get => totalPoints;
             set { totalPoints = value; OnPropertyChanged(); }

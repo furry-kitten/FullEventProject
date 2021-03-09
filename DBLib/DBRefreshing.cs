@@ -69,7 +69,7 @@ namespace FO.Models
 
                 var helper = new DBHelper();
 
-                helper.Insert(newData);
+                helper.RefreshDB(newData);
             }
             catch(Exception e)
             {
@@ -77,6 +77,8 @@ namespace FO.Models
                     $"{e.Message}\n" +
                     $"{e.InnerException.Message}");
             }
+
+            SerializeDataAsinc(newData, "NewData");
 
             return newData;
         }
@@ -138,12 +140,9 @@ namespace FO.Models
                     }
                 };
 
-                newData.Classes.AddRange(classes);
-                dancer.Classes = classes;
-
                 idSHA = int.Parse(data1[0]);
                 dancer = newData.Dancers.Find(d => d.IDsha == idSHA);
-                classes = new List<Classes>
+                classes.AddRange(new List<Classes>
                 {
                     new Classes
                     {
@@ -175,10 +174,30 @@ namespace FO.Models
                         Points = byte.Parse(data1[9]),
                         Dancer = dancer
                     }
-                };
+                });
 
-                newData.Classes.AddRange(classes);
-                dancer.Classes.AddRange(classes);
+                var jnjDancer = classes.Where(c => c.SHAClasses.Direction == Direction.JnJ).OrderBy(c=>c.SHAClasses.Significance).ToList();
+                var classicDancer = classes.Where(c => c.SHAClasses.Direction == Direction.Classic).OrderBy(c => c.SHAClasses.Significance).ToList();
+                var newClasses = new List<Classes>();
+
+                if(newClasses.Find(c=> c.Points > 0) != null)
+                    for (int c = jnjDancer.Count - 1; c >= 0; c--)
+                    {
+                        if (jnjDancer[c].Points > 0 || newClasses.Where(c => c.SHAClasses.Direction == Direction.JnJ).ToList().Count > 0)
+                            newClasses.Add(jnjDancer[c]);
+
+                        if (classicDancer[c].Points > 0 || newClasses.Where(c => c.SHAClasses.Direction == Direction.Classic).ToList().Count > 0)
+                            newClasses.Add(classicDancer[c]);
+                    }
+
+                if (newClasses.Where(c => c.SHAClasses.Direction == Direction.JnJ).OrderBy(c => c.SHAClasses.Significance).ToList().Count == 0)
+                    newClasses.Add(jnjDancer.Find(c=>c.SHAClasses.Significance == 1));
+
+                if (newClasses.Where(c => c.SHAClasses.Direction == Direction.Classic).OrderBy(c => c.SHAClasses.Significance).ToList().Count == 0)
+                    newClasses.Add(classicDancer.Find(c => c.SHAClasses.Significance == 1));
+
+                newData.Classes.AddRange(newClasses.OrderBy(c=>c.SHAClasses.Direction).ThenBy(c=>c.SHAClasses.Significance));
+                dancer.Classes.AddRange(newClasses.OrderBy(c => c.SHAClasses.Direction).ThenBy(c => c.SHAClasses.Significance));
             }
         }
         private List<Club> ReadClubs(ExcelPackage package, ExcelWorksheet worksheet)
@@ -438,15 +457,30 @@ namespace FO.Models
 
             return directoryInfo;
         }
-        private async Task SerializeDataAsinc(AllData data)
+        private async Task SerializeDataAsinc(AllData data, string directoryName = "")
         {
-            await Task.Run(() => SerializeData(data));
+            string path = directoryName == string.Empty ? "" : $@"{directoryName}\";
+
+            await Task.Run(() => SerializeData(data.People, $"{directoryName}People"));
+            await Task.Run(() => SerializeData(data.Dancers, $"{directoryName}Dancers"));
+            await Task.Run(() => SerializeData(data.Activities, $"{directoryName}Activities"));
+            await Task.Run(() => SerializeData(data.Changes, $"{directoryName}Changes"));
+            await Task.Run(() => SerializeData(data.Classes, $"{directoryName}Classes"));
+            await Task.Run(() => SerializeData(data.Clubs, $"{directoryName}Clubs"));
+            await Task.Run(() => SerializeData(data.Groups, $"{directoryName}Groups"));
+            await Task.Run(() => SerializeData(data.NominationCompetitors, $"{directoryName}NominationCompetitors"));
+            await Task.Run(() => SerializeData(data.Plans, $"{directoryName}Plans"));
+            await Task.Run(() => SerializeData(data.Periodicities, $"{directoryName}Periodicities"));
+            await Task.Run(() => SerializeData(data.SHAClasses, $"{directoryName}SHAClasses"));
+            await Task.Run(() => SerializeData(data.Teachers, $"{directoryName}Teachers"));
+
+            Console.WriteLine($"Serialition has been dane");
         }
-        private void SerializeData(AllData data)
+        private void SerializeData(object data, string name = "CurrentData")
         {
 
             var settings = new UserSettings();
-            var filePath = $@"{settings.CurrentDirectory}\CurrentData.xml";
+            var filePath = $@"{settings.CurrentDirectory}\{name}.json";
 
             Console.WriteLine($"Serialize data from data base into {filePath}");
 
@@ -462,8 +496,6 @@ namespace FO.Models
                 File.Create(filePath);
 
             File.WriteAllText(filePath, jsonData);
-
-            Console.WriteLine($"Serialition has been dane");
         }
         private List<Activity> GetActivities(List<Event> events)
         {
